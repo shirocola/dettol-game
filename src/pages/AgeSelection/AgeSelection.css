@@ -1,0 +1,137 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container styles */
+.age-selection-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  font-family: Arial, sans-serif;
+  background-color: #ffffff; /* White background */
+}
+
+.age-selection-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Full height of the container */
+  width: 100%; /* Full width of the container */
+  padding: 20px;
+  background-color: #f9f9f9; /* Light gray background */
+  border: none; /* Remove border */
+  border-radius: 0; /* Remove rounded corners */
+}
+
+/* Background styles */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.sky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #87ceeb, #f0f8ff); /* Sky blue gradient */
+}
+
+.landscape {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 65%;
+  background-color: #4caf50; /* Green landscape */
+  opacity: 0.7; /* Slight transparency */
+}
+
+/* Background image styles */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* Ensure the image covers the entire viewport */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  z-index: -1; /* Place the background behind all content */
+}
+
+/* Logo styles */
+.logo-container {
+  margin-bottom: 20px; /* Add spacing below the logo */
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #008631; /* Dark green for contrast */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for emphasis */
+}
+
+.logo-text {
+  color: white; /* White text for contrast */
+  font-weight: bold;
+  font-size: 24px;
+  z-index: 2;
+}
+
+/* Button styles */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between buttons */
+  width: 100%;
+  align-items: center; /* Center buttons horizontally */
+}
+
+/* Next button styles */
+.next-button-container {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center the Next button horizontally */
+}
+
+.next-button {
+  width: 120px; /* Shorter width for the Next button */
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold; /* Make text bold */
+  background-color: #fffacd; /* Light yellow background */
+  color: black; /* Black text */
+  border: 2px solid #e6e6e6; /* Light gray border */
+  border-radius: 12px; /* Increased border radius for a rounded look */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.5); /* 3D effect */
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+  text-align: center; /* Center the text inside the button */
+}
+
+.next-button:hover {
+  background-color: #ffeb99; /* Slightly darker yellow on hover */
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(255, 255, 255, 0.5); /* Inset shadow for pressed effect */
+}
+
+.next-button:active {
+  transform: scale(0.98); /* Slight press effect */
+}

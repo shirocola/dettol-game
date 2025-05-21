@@ -1,0 +1,42 @@
+.custom-button {
+  all: unset; /* Reset all styles */
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff; /* Blue background */
+  border: none;
+  border-radius: 12px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.custom-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.custom-button:active {
+  transform: scale(0.98); /* Slight press effect */
+}
+
+.button {
+  width: 200px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  background-color: #fffacd; /* Light yellow background */
+  border: 2px solid #e6e6e6; /* Light gray border */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.5); /* 3D effect */
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.button:hover {
+  background-color: #ffeb99; /* Slightly darker yellow on hover */
+}
+
+.button:active {
+  transform: scale(0.98); /* Slight press effect */
+}

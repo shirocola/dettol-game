@@ -1,0 +1,22 @@
+.logo-container {
+  margin-bottom: 20px; /* Add spacing below the logo */
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #008631; /* Dark green for contrast */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for emphasis */
+}
+
+.logo-text {
+  color: white; /* White text for contrast */
+  font-weight: bold;
+  font-size: 24px;
+  z-index: 2;
+}

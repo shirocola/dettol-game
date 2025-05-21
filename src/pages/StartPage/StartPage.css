@@ -1,0 +1,18 @@
+.start-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  background: linear-gradient(to bottom, #00416a, #e4e5e6); /* Dark blue to light gray gradient */
+  text-align: center; /* Center-align text */
+}
+
+.start-page-text h1 {
+  color: white; /* White text */
+  font-size: 2rem; /* Large font size */
+  font-weight: bold; /* Bold text */
+  margin-bottom: 50px; /* Add spacing below the text */
+  line-height: 1.5; /* Adjust line height for readability */
+}
