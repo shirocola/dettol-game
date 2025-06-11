@@ -1,4 +1,3 @@
-import React from 'react';
 import './StartPage.css';
 import DettolCircle from '../../components/DettolCircle/DettolCircle';
 import Button from '../../components/Button/Button';

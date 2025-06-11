@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './App.css';
-import './pages/AgeSelection/AgeSelection.css'; // Import AgeSelection styles
-import StartPage from './pages/StartPage/StartPage'; // Import StartPage
-import AgeSelection from './pages/AgeSelection/AgeSelection'; // Import AgeSelection
-import DettolCircle from './components/DettolCircle/DettolCircle'; // Import DettolCircle
-import Button from './components/Button/Button'; // Import Button component
+import './pages/AgeSelection/AgeSelection.css'; 
+import StartPage from './pages/StartPage/StartPage';
+import AgeSelection from './pages/AgeSelection/AgeSelection';
+import DettolCircle from './components/DettolCircle/DettolCircle'; 
+import Button from './components/Button/Button'; 
+import DettolQuizComplete from './components/Quiz/Quiz';
 
 function App() {
   const [gameStep, setGameStep] = useState(0); // 0: Start Screen, 1: Age Selection, 2: Start Page
@@ -16,6 +17,10 @@ function App() {
   const handleNext = () => {
     setGameStep(2); // Navigate to Start Page
   };
+
+  const handleStartQuiz = () => {
+    setGameStep(3); // Navigate to Quiz Complete
+  }
 
   return (
     <div className="app-container">
@@ -35,7 +40,12 @@ function App() {
           onNext={handleNext} // Pass the handleNext function as a prop
         />
       )}
-      {gameStep === 2 && <StartPage />}
+      {gameStep === 2 && (
+        <StartPage onStart={handleStartQuiz} />
+      )}
+      {gameStep === 3 && (
+        <DettolQuizComplete />
+      )}
     </div>
   );
 }
