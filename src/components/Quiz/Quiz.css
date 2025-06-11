@@ -343,3 +343,83 @@
     padding: 12px;
   }
 }
+
+/* Kiosk large screen styles (43" vertical touchscreen) */
+@media (min-width: 1000px) {
+  .quiz-card {
+    max-width: 800px;
+    min-height: 80vh;
+    padding: 40px;
+  }
+  
+  .question-text {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  
+  .dettol-text {
+    font-size: 28px;
+  }
+  
+  .logo-circle {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .logo-text {
+    font-size: 18px;
+  }
+  
+  .cross-vertical {
+    height: 60px;
+  }
+  
+  .cross-horizontal {
+    width: 60px;
+  }
+  
+  .answer-button.text-answer {
+    font-size: 24px;
+    padding: 25px 30px;
+    min-height: 80px;
+    margin-bottom: 20px;
+  }
+  
+  .answers-container.text-answers {
+    gap: 25px;
+    margin-bottom: 50px;
+  }
+  
+  .answers-container.image-answers {
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+  
+  .answer-button.image-answer {
+    min-height: 200px;
+    padding: 20px;
+  }
+  
+  .answer-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+  }
+  
+  .answer-label {
+    font-size: 20px;
+    padding: 15px 20px;
+  }
+  
+  .next-button {
+    font-size: 28px;
+    padding: 25px;
+    min-height: 80px;
+  }
+  
+  .question-number {
+    font-size: 18px;
+    padding: 8px 16px;
+    top: 25px;
+    right: 30px;
+  }
+}

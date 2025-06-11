@@ -16,3 +16,11 @@
   margin-bottom: 50px; /* Add spacing below the text */
   line-height: 1.5; /* Adjust line height for readability */
 }
+
+/* Kiosk large screen styles */
+@media (min-width: 1000px) {
+  .start-page-text h1 {
+    font-size: 4rem;
+    margin-bottom: 80px;
+  }
+}

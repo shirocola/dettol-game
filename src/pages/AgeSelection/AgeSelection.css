@@ -135,3 +135,31 @@
 .next-button:active {
   transform: scale(0.98); /* Slight press effect */
 }
+
+/* Kiosk large screen styles */
+@media (min-width: 1000px) {
+  .age-selection-card {
+    padding: 60px;
+  }
+  
+  .logo {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 40px;
+  }
+  
+  .logo-text {
+    font-size: 36px;
+  }
+  
+  .button-group {
+    gap: 30px;
+  }
+  
+  .next-button {
+    width: 200px;
+    padding: 20px;
+    font-size: 24px;
+    min-height: 80px;
+  }
+}

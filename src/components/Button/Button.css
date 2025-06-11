@@ -40,3 +40,19 @@
 .button:active {
   transform: scale(0.98); /* Slight press effect */
 }
+
+/* Kiosk large screen styles */
+@media (min-width: 1000px) {
+  .custom-button {
+    padding: 25px 50px;
+    font-size: 2.5rem;
+    min-height: 80px;
+  }
+  
+  .button {
+    width: 300px;
+    padding: 20px;
+    font-size: 24px;
+    min-height: 80px;
+  }
+}
