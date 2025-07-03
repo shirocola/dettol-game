@@ -1,0 +1,51 @@
+.result-footer {
+  padding: 30px 20px 20px 20px;
+  background: transparent;
+  width: 100%;
+  margin-top: auto;
+}
+
+.footer-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .result-footer {
+    padding: 20px 15px 15px 15px;
+  }
+  
+  .footer-buttons {
+    gap: 12px;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .result-footer {
+    padding: 15px 10px 10px 10px;
+  }
+  
+  .footer-buttons {
+    gap: 10px;
+    max-width: 300px;
+  }
+}
+
+/* Kiosk large screen styles */
+@media (min-width: 1000px) {
+  .result-footer {
+    padding: 30px;
+  }
+  
+  .footer-buttons {
+    gap: 20px;
+    max-width: 500px;
+  }
+}

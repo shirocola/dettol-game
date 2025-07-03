@@ -1,0 +1,195 @@
+.quote-result-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for mobile */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  width: 100vw;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.quote-result-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+}
+
+.quote-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.quote-result-card h2 {
+  color: #333;
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
+
+.quote-text {
+  margin: 30px 0;
+  position: relative;
+}
+
+.quote-text p {
+  color: #555;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  font-style: italic;
+  position: relative;
+  padding: 0 20px;
+}
+
+.quote-text::before {
+  content: '"';
+  font-size: 4rem;
+  color: #ddd;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  font-family: serif;
+}
+
+.quote-text::after {
+  content: '"';
+  font-size: 4rem;
+  color: #ddd;
+  position: absolute;
+  bottom: -40px;
+  right: -10px;
+  font-family: serif;
+}
+
+.quote-author {
+  color: #888;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .quote-result-container {
+    padding: 15px;
+    justify-content: flex-start;
+    padding-top: 40px;
+  }
+  
+  .quote-result-card {
+    padding: 25px;
+    max-width: 95%;
+    margin-bottom: 20px;
+  }
+  
+  .quote-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .quote-result-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .quote-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+  
+  .quote-text::before {
+    font-size: 3rem;
+    top: -5px;
+    left: -5px;
+  }
+  
+  .quote-text::after {
+    font-size: 3rem;
+    bottom: -25px;
+    right: -5px;
+  }
+  
+  .quote-author {
+    font-size: 1rem;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quote-result-container {
+    padding: 10px;
+    padding-top: 30px;
+  }
+  
+  .quote-result-card {
+    padding: 20px;
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .quote-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+  
+  .quote-result-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+  
+  .quote-text p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: 0 5px;
+  }
+  
+  .quote-text::before {
+    font-size: 2.5rem;
+    top: -3px;
+    left: -3px;
+  }
+  
+  .quote-text::after {
+    font-size: 2.5rem;
+    bottom: -20px;
+    right: -3px;
+  }
+  
+  .quote-author {
+    font-size: 0.9rem;
+    margin-top: 12px;
+  }
+}
+
+/* Kiosk large screen styles */
+@media (min-width: 1000px) {
+  .quote-result-card {
+    padding: 60px;
+    max-width: 700px;
+  }
+  
+  .quote-icon {
+    font-size: 4rem;
+  }
+  
+  .quote-result-card h2 {
+    font-size: 2.5rem;
+  }
+  
+  .quote-text p {
+    font-size: 1.5rem;
+  }
+  
+  .quote-author {
+    font-size: 1.3rem;
+  }
+}

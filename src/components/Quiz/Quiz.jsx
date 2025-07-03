@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Quiz.css';
 
-const DettolQuizComplete = () => {
+const DettolQuizComplete = ({ onQuizComplete }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
 
@@ -12,9 +12,9 @@ const DettolQuizComplete = () => {
       type: "text",
       answers: [
         { id: "romantic", text: "โรแมนติก หอมอบอุ่น" },
-        { id: "fresh", text: "สดใส สีช่อน ใกล้ชิด" },
-        { id: "simple", text: "เรียบง่าย เมาชนาย" },
-        { id: "fun", text: "ตื่นเต้น เพรียวสดชื่น" }
+        { id: "fresh", text: "สดใส ขี้อ้อน ใกล้ชิด" },
+        { id: "simple", text: "เรียบง่าย เบาสบาย" },
+        { id: "fun", text: "ตื่นเต้น เฟรชสดชื่น" }
       ]
     },
     {
@@ -95,11 +95,29 @@ const DettolQuizComplete = () => {
     setSelectedAnswers(newAnswers);
 
     if (currentQuestion < questions.length - 1) {
-      setTimeout(() => setCurrentQuestion(currentQuestion + 1), 200); // slight delay for UX
-    } else {
-      // Handle quiz completion
-      console.log('Quiz completed!', newAnswers);
-      alert('Quiz completed! Thank you for participating.');
+      setTimeout(() => setCurrentQuestion(currentQuestion + 1), 1000); // Show selection for 1 second
+    }
+  };
+
+  const handleFinishQuiz = () => {
+    // Handle quiz completion - question 5 routing
+    const question5Answer = selectedAnswers[4]; // question 5 (0-indexed)
+    
+    let resultRoute;
+    if (question5Answer === 'efficiency') {
+      resultRoute = 'efficiency';
+    } else if (question5Answer === 'protection') {
+      resultRoute = 'protection';
+    } else if (question5Answer === 'scent_lasting') {
+      // Random selection between two scent components
+      resultRoute = Math.random() < 0.5 ? 'scent1' : 'scent2';
+    } else if (question5Answer === 'gentle_clean') {
+      resultRoute = 'gentle';
+    }
+    
+    console.log('Quiz completed!', selectedAnswers);
+    if (onQuizComplete) {
+      onQuizComplete(resultRoute, selectedAnswers);
     }
   };
 
@@ -155,6 +173,18 @@ const DettolQuizComplete = () => {
             </button>
           ))}
         </div>
+        
+        {/* Finish button for last question */}
+        {currentQuestion === questions.length - 1 && selectedAnswers[currentQuestion] && (
+          <div className="finish-button-container">
+            <button 
+              className="finish-button"
+              onClick={handleFinishQuiz}
+            >
+              Finish
+            </button>
+          </div>
+        )}
         
         {/* Decorative star */}
         <div className="star star-bottom">✦</div>

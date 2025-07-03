@@ -1,0 +1,75 @@
+.download-button {
+  width: 200px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 auto;
+}
+
+.download-button:hover {
+  background: linear-gradient(135deg, #20c997, #28a745);
+  transform: translateY(-2px);
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.download-button:active {
+  transform: translateY(0);
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.download-icon {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .download-button {
+    width: 180px;
+    padding: 10px;
+    font-size: 14px;
+    min-height: 50px;
+  }
+  
+  .download-icon {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .download-button {
+    width: 160px;
+    padding: 8px;
+    font-size: 13px;
+    min-height: 45px;
+  }
+  
+  .download-icon {
+    font-size: 15px;
+  }
+}
+
+/* Kiosk large screen styles */
+@media (min-width: 1000px) {
+  .download-button {
+    width: 300px;
+    padding: 20px;
+    font-size: 24px;
+    min-height: 80px;
+  }
+  
+  .download-icon {
+    font-size: 28px;
+  }
+}

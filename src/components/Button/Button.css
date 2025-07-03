@@ -21,24 +21,111 @@
 
 .button {
   width: 200px;
-  padding: 10px;
+  padding: 12px;
   font-size: 16px;
   font-weight: bold;
   color: black;
   background-color: #fffacd; /* Light yellow background */
-  border: 2px solid #e6e6e6; /* Light gray border */
+  border: none; /* Remove border to match download button */
   border-radius: 12px; /* Rounded corners */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.5); /* 3D effect */
   cursor: pointer;
-  transition: background-color 0.2s, transform 0.1s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth cubic-bezier transition */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Match download button gap */
+  transform: scale(1);
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
 }
 
 .button:hover {
   background-color: #ffeb99; /* Slightly darker yellow on hover */
+  transform: translateY(-2px) scale(1.02); /* Combined hover effects */
+  box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.button:hover::before {
+  width: 100%;
+  height: 100%;
 }
 
 .button:active {
-  transform: scale(0.98); /* Slight press effect */
+  transform: translateY(0) scale(0.98); /* Combined active effects */
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.1s;
+}
+
+.button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.button.disabled:hover {
+  background-color: #fffacd;
+  transform: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Smooth button specific enhancements */
+.button.smooth-button {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bounce effect */
+}
+
+.button.smooth-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.button.smooth-button:active {
+  transform: translateY(-1px) scale(0.95);
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .button {
+    width: 180px;
+    padding: 10px;
+    font-size: 14px;
+    min-height: 50px;
+  }
+  
+  .custom-button {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    min-height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .button {
+    width: 160px;
+    padding: 8px;
+    font-size: 13px;
+    min-height: 45px;
+  }
+  
+  .custom-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    min-height: 45px;
+  }
 }
 
 /* Kiosk large screen styles */
