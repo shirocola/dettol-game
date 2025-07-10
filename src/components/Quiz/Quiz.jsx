@@ -9,12 +9,36 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
     {
       id: 1,
       question: "ความรักที่คุณอยากส่งผู้สำคัญในรูปแบบไหน?",
-      type: "text",
+      type: "image",
       answers: [
-        { id: "romantic", text: "โรแมนติก หอมอบอุ่น" },
-        { id: "fresh", text: "สดใส ขี้อ้อน ใกล้ชิด" },
-        { id: "simple", text: "เรียบง่าย เบาสบาย" },
-        { id: "fun", text: "ตื่นเต้น เฟรชสดชื่น" }
+        { 
+          id: "romantic", 
+          text: "โรแมนติก หอมอบอุ่น",
+          icon: "💕",
+          bgColor: "#c8e6c8",
+          description: "โรแมนติก หอมอบอุ่น"
+        },
+        { 
+          id: "fresh", 
+          text: "สดใส ขี้อ้อน ใกล้ชิด",
+          icon: "🌸",
+          bgColor: "#c8e6c8",
+          description: "สดใส ขี้อ้อน ใกล้ชิด"
+        },
+        { 
+          id: "simple", 
+          text: "เรียบง่าย เบาสบาย",
+          icon: "🌿",
+          bgColor: "#c8e6c8",
+          description: "เรียบง่าย เบาสบาย"
+        },
+        { 
+          id: "fun", 
+          text: "ตื่นเต้น เฟรชสดชื่น",
+          icon: "✨",
+          bgColor: "#c8e6c8",
+          description: "ตื่นเต้น เฟรชสดชื่น"
+        }
       ]
     },
     {
@@ -26,63 +50,135 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
           id: "brush", 
           text: "แปรงฟัน",
           icon: "🧴",
-          bgColor: "#f0f0f0",
+          bgColor: "#c8e6c8",
           description: "แปรงฟัน"
         },
         { 
           id: "bath", 
           text: "แช่น้ำ",
           icon: "🛁",
-          bgColor: "#b8e6e6",
+          bgColor: "#c8e6c8",
           description: "แช่น้ำ"
         },
         { 
           id: "foam", 
           text: "ฟองสบู่",
           icon: "🧼",
-          bgColor: "#f8c8d4",
+          bgColor: "#c8e6c8",
           description: "ฟองสบู่"
         },
         { 
           id: "shower", 
           text: "สระผม",
           icon: "🚿",
-          bgColor: "#b8d4f0",
+          bgColor: "#c8e6c8",
           description: "สระผม"
         }
       ]
     },
     {
       id: 3,
-      question: "คุณดูสวนใหมของร่างกายเป็นอันดับแรก?",
-      type: "text",
+      question: "คุณดูแลส่วนไหนของร่างกายเป็นอันดับแรก?",
+      type: "image",
       answers: [
-        { id: "before", text: "มือ" },
-        { id: "after", text: "หลัง" },
-        { id: "rarely", text: "แขน" },
-        { id: "late", text: "ลำตัว" }
+        { 
+          id: "before", 
+          text: "มือ",
+          icon: "🖐️",
+          bgColor: "#c8e6c8",
+          description: "มือ"
+        },
+        { 
+          id: "after", 
+          text: "หลัง",
+          icon: "🫶",
+          bgColor: "#c8e6c8",
+          description: "หลัง"
+        },
+        { 
+          id: "rarely", 
+          text: "แขน",
+          icon: "💪",
+          bgColor: "#c8e6c8",
+          description: "แขน"
+        },
+        { 
+          id: "late", 
+          text: "ลำตัว",
+          icon: "🫂",
+          bgColor: "#c8e6c8",
+          description: "ลำตัว"
+        }
       ]
     },
     {
       id: 4,
       question: "อะไรคือสิ่งที่ทำให้คุณรู้สึกว่า \"อาบน้ำแล้วสบายตัว\" ที่สุด?",
-      type: "text",
+      type: "image",
       answers: [
-        { id: "water_quality", text: "อุณหภูมิของน้ำ" },
-        { id: "scent", text: "กลิ่นหอมของครีมอาบน้ำ" },
-        { id: "cleanliness", text: "การสครับ/ขัดผิว" },
-        { id: "feeling", text: "ความรู้สึกสะอาดหลังอาบ" }
+        { 
+          id: "water_quality", 
+          text: "อุณหภูมิของน้ำ",
+          icon: "🌡️",
+          bgColor: "#c8e6c8",
+          description: "อุณหภูมิของน้ำ"
+        },
+        { 
+          id: "scent", 
+          text: "กลิ่นหอมของครีมอาบน้ำ",
+          icon: "🌺",
+          bgColor: "#c8e6c8",
+          description: "กลิ่นหอมของครีมอาบน้ำ"
+        },
+        { 
+          id: "cleanliness", 
+          text: "การสครับ/ขัดผิว",
+          icon: "🧖‍♀️",
+          bgColor: "#c8e6c8",
+          description: "การสครับ/ขัดผิว"
+        },
+        { 
+          id: "feeling", 
+          text: "ความรู้สึกสะอาดหลังอาบ",
+          icon: "✨",
+          bgColor: "#c8e6c8",
+          description: "ความรู้สึกสะอาดหลังอาบ"
+        }
       ]
     },
     {
       id: 5,
       question: "คุณคิดว่าอะไรสำคัญที่สุดในการเลือกครีมอาบน้ำ?",
-      type: "text",
+      type: "image",
       answers: [
-        { id: "efficiency", text: "ประสิทธิภาพในการทำความสะอาด" },
-        { id: "protection", text: "การบำรุงผิวหลังอาบน้ำ" },
-        { id: "scent_lasting", text: "กลิ่นหอมติดตัว" },
-        { id: "gentle_clean", text: "ความรู้สึกสดชื่นขณะอาบ" }
+        { 
+          id: "efficiency", 
+          text: "ประสิทธิภาพในการทำความสะอาด",
+          icon: "🧽",
+          bgColor: "#c8e6c8",
+          description: "ประสิทธิภาพในการทำความสะอาด"
+        },
+        { 
+          id: "protection", 
+          text: "การบำรุงผิวหลังอาบน้ำ",
+          icon: "🛡️",
+          bgColor: "#c8e6c8",
+          description: "การบำรุงผิวหลังอาบน้ำ"
+        },
+        { 
+          id: "scent_lasting", 
+          text: "กลิ่นหอมติดตัว",
+          icon: "🌹",
+          bgColor: "#c8e6c8",
+          description: "กลิ่นหอมติดตัว"
+        },
+        { 
+          id: "gentle_clean", 
+          text: "ความรู้สึกสดชื่นขณะอาบ",
+          icon: "💫",
+          bgColor: "#c8e6c8",
+          description: "ความรู้สึกสดชื่นขณะอาบ"
+        }
       ]
     }
   ];
@@ -124,7 +220,6 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
   const currentQ = questions[currentQuestion];
 
   return (
-    <div className="quiz-container">
       <div className="quiz-card">
         {/* Header with Dettol branding */}
         <div className="quiz-header">
@@ -145,7 +240,6 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
         
         {/* Question section */}
         <div className="question-container">
-          <div className="question-number">{currentQ.id}/5</div>
           <div className="question-text">
             {currentQ.question}
           </div>
@@ -189,7 +283,6 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
         {/* Decorative star */}
         <div className="star star-bottom">✦</div>
       </div>
-    </div>
   );
 };
 

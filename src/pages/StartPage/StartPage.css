@@ -5,7 +5,10 @@
   align-items: center;
   height: 100vh; /* Full viewport height */
   width: 100vw; /* Full viewport width */
-  background: linear-gradient(to bottom, #00416a, #e4e5e6); /* Dark blue to light gray gradient */
+  background-image: url('/BG-Cream.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   text-align: center; /* Center-align text */
 }
 
