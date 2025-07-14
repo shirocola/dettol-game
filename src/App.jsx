@@ -24,7 +24,7 @@ function App() {
   const [quizResult, setQuizResult] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   
-  const gameUrl = "https://dettol-game-shirocola-shirocolas-projects.vercel.app";
+  const gameUrl = "https://dettol-game.vercel.app/";
 
   const smoothTransition = (nextStep, delay = 300) => {
     setIsLoading(true);
