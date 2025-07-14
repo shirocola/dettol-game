@@ -8,7 +8,6 @@ const StartPage = ({ onStart }) => {
     <LazyBackgroundImage 
       src="/BG-Cream.png" 
       className="start-page"
-      loadingComponent={<div className="loading-spinner"></div>}
     >
       <DettolCircle />
       <div className="start-page-text">

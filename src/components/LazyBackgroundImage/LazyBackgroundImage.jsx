@@ -1,42 +1,62 @@
-import React from 'react';
-import { useLazyBackground } from '../../hooks/useLazyBackground';
+import React, { useState, useEffect } from 'react';
 import './LazyBackgroundImage.css';
+import LoadingScreen from '../LoadingScreen/LoadingScreen';
 
 const LazyBackgroundImage = ({ 
   src, 
   children, 
   className = '', 
   style = {},
-  loadingComponent = null,
-  errorComponent = null,
   ...props 
 }) => {
-  const { ref, style: backgroundStyle, isLoaded, isLoading, error } = useLazyBackground(src);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    if (!src) {
+      setIsLoading(false);
+      return;
+    }
+
+    setIsLoading(true);
+    setIsLoaded(false);
+
+    const img = new Image();
+    img.onload = () => {
+      setIsLoaded(true);
+      setIsLoading(false);
+    };
+    img.onerror = () => {
+      setIsLoaded(true); // Still show content even if image fails
+      setIsLoading(false);
+    };
+    img.src = src;
+
+    // Handle cached images
+    if (img.complete) {
+      setIsLoaded(true);
+      setIsLoading(false);
+    }
+  }, [src]);
 
   const combinedStyle = {
-    ...backgroundStyle,
+    backgroundImage: isLoaded ? `url(${src})` : 'none',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
     ...style
   };
 
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
+
   return (
     <div
-      ref={ref}
-      className={`lazy-background ${className} ${isLoading ? 'loading' : ''} ${isLoaded ? 'loaded' : ''}`}
+      className={`lazy-background ${className}`}
       style={combinedStyle}
       {...props}
     >
-      {isLoading && loadingComponent && (
-        <div className="lazy-background-loading">
-          {loadingComponent}
-        </div>
-      )}
-      
-      {error && errorComponent && (
-        <div className="lazy-background-error">
-          {errorComponent}
-        </div>
-      )}
-      
       {children}
     </div>
   );

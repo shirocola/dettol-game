@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 
 export const useLazyBackground = (imageSrc, options = {}) => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // Start with loading=true
   const [error, setError] = useState(null);
   const elementRef = useRef(null);
 
@@ -13,41 +13,41 @@ export const useLazyBackground = (imageSrc, options = {}) => {
   } = options;
 
   useEffect(() => {
-    const element = elementRef.current;
-    if (!element || !imageSrc) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !isLoaded && !isLoading) {
-          setIsLoading(true);
-          setError(null);
-          
-          // Preload the image
-          const img = new Image();
-          
-          img.onload = () => {
-            setIsLoaded(true);
-            setIsLoading(false);
-          };
-          
-          img.onerror = () => {
-            setError('Failed to load image');
-            setIsLoading(false);
-          };
-          
-          // Start loading the image
-          img.src = imageSrc;
-        }
-      },
-      { threshold, rootMargin }
-    );
-
-    observer.observe(element);
-
-    return () => {
-      observer.disconnect();
+    if (!imageSrc) return;
+    
+    console.log('useLazyBackground: Loading image', imageSrc);
+    
+    // Reset states
+    setIsLoaded(false);
+    setIsLoading(true);
+    setError(null);
+    
+    // Create and load image
+    const img = new Image();
+    
+    img.onload = () => {
+      console.log('useLazyBackground: Image loaded successfully');
+      setIsLoaded(true);
+      setIsLoading(false);
     };
-  }, [imageSrc, isLoaded, isLoading, threshold, rootMargin]);
+    
+    img.onerror = () => {
+      console.log('useLazyBackground: Image load failed');
+      setError('Failed to load image');
+      setIsLoading(false);
+    };
+    
+    // Start loading
+    img.src = imageSrc;
+    
+    // Handle already cached images
+    if (img.complete) {
+      console.log('useLazyBackground: Image was already cached');
+      setIsLoaded(true);
+      setIsLoading(false);
+    }
+    
+  }, [imageSrc]);
 
   const backgroundStyle = {
     backgroundImage: isLoaded ? `url(${imageSrc})` : `url(${placeholder})`,

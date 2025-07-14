@@ -23,15 +23,11 @@ import LazyBackgroundImage from './components/LazyBackgroundImage/LazyBackground
 function App() {
   const [gameStep, setGameStep] = useState(0); // 0: Start Screen, 1: Age Selection, 2: Start Page, 3: Quiz, 4-8: Results, 9-13: Quotes, 14: Process
   const [quizResult, setQuizResult] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-  
   const gameUrl = "https://dettol-game.vercel.app/";
 
   const smoothTransition = (nextStep, delay = 300) => {
-    setIsLoading(true);
     setTimeout(() => {
       setGameStep(nextStep);
-      setIsLoading(false);
     }, delay);
   };
 
@@ -108,7 +104,6 @@ function App() {
     <LazyBackgroundImage 
       src="/BG-Cream.png" 
       className="app-container"
-      loadingComponent={<div className="loading-spinner"></div>}
     >
       {gameStep === 0 && (
         <div className="start-screen game-screen">
@@ -192,12 +187,6 @@ function App() {
         </div>
       )}
       
-      {/* Loading overlay */}
-      {isLoading && (
-        <div className="loading-transition">
-          <div className="loading-spinner"></div>
-        </div>
-      )}
     </LazyBackgroundImage>
   );
 }
