@@ -1,6 +1,5 @@
 import './AgeSelection.css';
 import Button from '../../components/Button/Button';
-import LazyBackgroundImage from '../../components/LazyBackgroundImage/LazyBackgroundImage';
 
 const AgeSelection = ({ onNext }) => {
 
@@ -10,11 +9,7 @@ const AgeSelection = ({ onNext }) => {
   };
 
   return (
-    <LazyBackgroundImage 
-      src="/BG-Cream.png" 
-      className="age-selection-container"
-      loadingComponent={<div className="loading-spinner"></div>}
-    >
+    <div className="age-selection-container">
       <div className="age-selection-card">
         <div className="logo-container">
           <div className="logo">
@@ -30,7 +25,7 @@ const AgeSelection = ({ onNext }) => {
           <Button text="45 Y and Over" onClick={() => handleAgeSelection('45 and over')} className="smooth-button" />
         </div>
       </div>
-    </LazyBackgroundImage>
+    </div>
   );
 };
 

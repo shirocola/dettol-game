@@ -24,7 +24,7 @@
   height: 100%; /* Full height of the container */
   width: 100%; /* Full width of the container */
   padding: 20px;
-  background-color: #f9f9f9; /* Light gray background */
+  background-color: transparent; /* Remove background to show the image */
   border: none; /* Remove border */
   border-radius: 0; /* Remove rounded corners */
 }
