@@ -191,7 +191,7 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
     setSelectedAnswers(newAnswers);
 
     if (currentQuestion < questions.length - 1) {
-      setTimeout(() => setCurrentQuestion(currentQuestion + 1), 1000); // Show selection for 1 second
+      setTimeout(() => setCurrentQuestion(currentQuestion + 1), 500); // Smooth transition
     }
   };
 
