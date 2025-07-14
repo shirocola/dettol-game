@@ -14,10 +14,6 @@
   height: 100vh; /* Full viewport height */
   width: 100vw; /* Full viewport width */
   font-family: Arial, sans-serif;
-  background-image: url('/BG-Cream.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .age-selection-card {

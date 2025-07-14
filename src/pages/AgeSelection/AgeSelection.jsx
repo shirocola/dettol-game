@@ -1,7 +1,8 @@
 import './AgeSelection.css';
 import Button from '../../components/Button/Button';
+import LazyBackgroundImage from '../../components/LazyBackgroundImage/LazyBackgroundImage';
 
-const AgeSelection = ({ backgroundImage, onNext }) => {
+const AgeSelection = ({ onNext }) => {
 
   const handleAgeSelection = (ageRange) => {
     console.log(`Selected Age: ${ageRange}`);
@@ -9,12 +10,11 @@ const AgeSelection = ({ backgroundImage, onNext }) => {
   };
 
   return (
-    <div className="age-selection-container">
-      <div
-        className="background-image"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      ></div>
-
+    <LazyBackgroundImage 
+      src="/BG-Cream.png" 
+      className="age-selection-container"
+      loadingComponent={<div className="loading-spinner"></div>}
+    >
       <div className="age-selection-card">
         <div className="logo-container">
           <div className="logo">
@@ -30,7 +30,7 @@ const AgeSelection = ({ backgroundImage, onNext }) => {
           <Button text="45 Y and Over" onClick={() => handleAgeSelection('45 and over')} className="smooth-button" />
         </div>
       </div>
-    </div>
+    </LazyBackgroundImage>
   );
 };
 

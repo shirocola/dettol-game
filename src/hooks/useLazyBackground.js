@@ -1,0 +1,67 @@
+import { useState, useEffect, useRef } from 'react';
+
+export const useLazyBackground = (imageSrc, options = {}) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const elementRef = useRef(null);
+
+  const { 
+    threshold = 0.1, 
+    rootMargin = '50px',
+    placeholder = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjZjBmMGYwIi8+Cjx0ZXh0IHg9IjUwIiB5PSI1NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjY2NjIj5Mb2FkaW5nLi4uPC90ZXh0Pgo8L3N2Zz4='
+  } = options;
+
+  useEffect(() => {
+    const element = elementRef.current;
+    if (!element || !imageSrc) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isLoaded && !isLoading) {
+          setIsLoading(true);
+          setError(null);
+          
+          // Preload the image
+          const img = new Image();
+          
+          img.onload = () => {
+            setIsLoaded(true);
+            setIsLoading(false);
+          };
+          
+          img.onerror = () => {
+            setError('Failed to load image');
+            setIsLoading(false);
+          };
+          
+          // Start loading the image
+          img.src = imageSrc;
+        }
+      },
+      { threshold, rootMargin }
+    );
+
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [imageSrc, isLoaded, isLoading, threshold, rootMargin]);
+
+  const backgroundStyle = {
+    backgroundImage: isLoaded ? `url(${imageSrc})` : `url(${placeholder})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    transition: 'background-image 0.3s ease-in-out'
+  };
+
+  return {
+    ref: elementRef,
+    style: backgroundStyle,
+    isLoaded,
+    isLoading,
+    error
+  };
+};
