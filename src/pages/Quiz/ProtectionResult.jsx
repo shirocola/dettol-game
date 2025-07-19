@@ -9,7 +9,7 @@ const ProtectionResult = ({ onNext }) => {
         <h2>Protection Result</h2>
         <p>You care about skin protection and care!</p>
       </div>
-      <ResultFooter onNext={onNext} nextButtonText="Next" />
+      <ResultFooter onNext={onNext} nextButtonText="ถัดไป" />
     </div>
   );
 };

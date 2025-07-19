@@ -18,11 +18,11 @@ const AgeSelection = ({ onNext }) => {
         </div>
 
         <div className="button-group">
-          <Button text="Under 18" onClick={() => handleAgeSelection('under 18')} className="smooth-button" />
-          <Button text="18 - 24 Y" onClick={() => handleAgeSelection('18-24')} className="smooth-button" />
-          <Button text="25 - 34 Y" onClick={() => handleAgeSelection('25-34')} className="smooth-button" />
-          <Button text="35 - 44 Y" onClick={() => handleAgeSelection('35-44')} className="smooth-button" />
-          <Button text="45 Y and Over" onClick={() => handleAgeSelection('45 and over')} className="smooth-button" />
+          <Button text="อายุต่ำกว่า 18" onClick={() => handleAgeSelection('under 18')} className="smooth-button" />
+          <Button text="18 - 24 ปี" onClick={() => handleAgeSelection('18-24')} className="smooth-button" />
+          <Button text="25 - 34 ปี" onClick={() => handleAgeSelection('25-34')} className="smooth-button" />
+          <Button text="35 - 44 ปี" onClick={() => handleAgeSelection('35-44')} className="smooth-button" />
+          <Button text="45 ปีขึ้นไป" onClick={() => handleAgeSelection('45 and over')} className="smooth-button" />
         </div>
       </div>
     </div>

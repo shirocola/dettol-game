@@ -109,10 +109,9 @@ function App() {
         <div className="start-screen game-screen">
           <DettolCircle />
           <div className="start-screen-text">
-            <h1>LOVE IN <br /> FIRST SCENT <br /> with DETTOL</h1>
-            <h2>PROSKIN INTERACTIVE GAME</h2>
+            <h1><span className="match-your">MATCH YOUR</span> <br /> <span className="love-story">LOVE STORY</span> <br /> <span className="with-dettol">with </span><span className="dettol">Dettol</span></h1>
           </div>
-          <Button text="PLAY!" onClick={handleStartGame} className="age-button smooth-button" />
+          <Button text="เล่น!" onClick={handleStartGame} className="age-button smooth-button" />
           <QRCodeComponent url={gameUrl} size={200} />
         </div>
       )}

@@ -193,3 +193,14 @@
     font-size: 1.3rem;
   }
 }
+
+/* Specific styling for ScentQuote1 with Lavender background */
+.scent-quote1-container {
+  background: url('/Lavender-Card1.jpg') !important;
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+}

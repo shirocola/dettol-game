@@ -9,7 +9,7 @@ const EfficiencyResult = ({ onNext }) => {
         <h2>Efficiency Result</h2>
         <p>You value efficiency in cleaning products!</p>
       </div>
-      <ResultFooter onNext={onNext} nextButtonText="Next" />
+      <ResultFooter onNext={onNext} nextButtonText="ถัดไป" />
     </div>
   );
 };

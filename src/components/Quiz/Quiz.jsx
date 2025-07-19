@@ -201,7 +201,7 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
     
     let resultRoute;
     if (question5Answer === 'efficiency') {
-      resultRoute = 'efficiency';
+      resultRoute = 'scent1'; // Option 1 now routes to ScentQuote1 with Lavender background
     } else if (question5Answer === 'protection') {
       resultRoute = 'protection';
     } else if (question5Answer === 'scent_lasting') {

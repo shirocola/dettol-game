@@ -13,7 +13,7 @@ const ScentQuote2 = ({ onNext }) => {
         </div>
         <div className="quote-author">- Dettol ProSkin</div>
       </div>
-      <ResultFooter onNext={onNext} nextButtonText="Play Again" />
+      <ResultFooter onNext={onNext} nextButtonText="เล่นอีกครั้ง" />
     </div>
   );
 };

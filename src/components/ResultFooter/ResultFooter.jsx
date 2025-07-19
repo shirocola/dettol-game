@@ -4,7 +4,7 @@ import DownloadButton from '../DownloadButton/DownloadButton';
 import Button from '../Button/Button';
 import './ResultFooter.css';
 
-const ResultFooter = ({ onDownload, onNext, nextButtonText = "Next" }) => {
+const ResultFooter = ({ onDownload, onNext, nextButtonText = "ถัดไป" }) => {
   const handleDownload = async () => {
     if (onDownload) {
       onDownload();
@@ -22,6 +22,12 @@ const ResultFooter = ({ onDownload, onNext, nextButtonText = "Next" }) => {
         return;
       }
 
+      // Hide the footer buttons temporarily during capture
+      const footer = document.querySelector('.result-footer');
+      if (footer) {
+        footer.style.display = 'none';
+      }
+
       // Create canvas from the result container
       const canvas = await html2canvas(resultContainer, {
         backgroundColor: null,
@@ -31,6 +37,11 @@ const ResultFooter = ({ onDownload, onNext, nextButtonText = "Next" }) => {
         width: resultContainer.offsetWidth,
         height: resultContainer.offsetHeight
       });
+
+      // Restore the footer buttons after capture
+      if (footer) {
+        footer.style.display = '';
+      }
 
       // Convert canvas to blob and download
       canvas.toBlob((blob) => {

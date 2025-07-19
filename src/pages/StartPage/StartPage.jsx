@@ -13,7 +13,7 @@ const StartPage = ({ onStart }) => {
       <div className="start-page-text">
         <h1>MATCH YOUR <br /> LOVE STORY</h1>
       </div>
-      <Button text="START!" onClick={onStart} className="smooth-button" />
+      <Button text="เริ่ม!" onClick={onStart} className="smooth-button" />
     </LazyBackgroundImage>
   );
 };

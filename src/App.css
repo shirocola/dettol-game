@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'DB HeaventRounded';
+  src: url('../font/DB HeaventRoundedv3.2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Ensure full-screen layout for all devices */
 html, body, #root {
   margin: 0;
@@ -159,11 +166,32 @@ html, body, #root {
 }
 
 .start-screen-text h1 {
-  color: white; /* White text */
   font-size: 2rem; /* Large font size */
   font-weight: bold; /* Bold text */
   margin-bottom: 20px; /* Add spacing below the heading */
   line-height: 1.5; /* Adjust line height for readability */
+  font-family: 'DB HeaventRounded', Arial, sans-serif;
+}
+
+.start-screen-text h1 .match-your {
+  color: navy;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.start-screen-text h1 .love-story {
+  color: navy;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+.start-screen-text h1 .with-dettol {
+  color: darkgreen;
+}
+
+.start-screen-text h1 .dettol {
+  color: darkgreen;
+  font-size: 2.5rem;
 }
 
 .start-screen-text h2 {
@@ -177,7 +205,7 @@ html, body, #root {
   padding: 15px 30px;
   font-size: 1.5rem;
   color: white;
-  background-color: #007bff;
+  background-color: #28a745;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -185,7 +213,7 @@ html, body, #root {
 }
 
 .age-button:hover {
-  background-color: #0056b3;
+  background-color: #1e7e34;
 }
 
 .game-screen {
@@ -201,14 +229,14 @@ html, body, #root {
   padding: 15px 30px;
   font-size: 1.5rem;
   color: white;
-  background-color: #007bff;
+  background-color: #28a745;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .play-button:hover {
-  background-color: #0056b3;
+  background-color: #1e7e34;
 }
 
 /* Mobile responsive styles */

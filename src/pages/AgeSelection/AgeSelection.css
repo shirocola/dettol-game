@@ -116,8 +116,8 @@
   padding: 10px;
   font-size: 16px;
   font-weight: bold; /* Make text bold */
-  background-color: #fffacd; /* Light yellow background */
-  color: black; /* Black text */
+  background-color: #28a745; /* Green background */
+  color: white; /* White text */
   border: 2px solid #e6e6e6; /* Light gray border */
   border-radius: 12px; /* Increased border radius for a rounded look */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.5); /* 3D effect */
@@ -127,7 +127,7 @@
 }
 
 .next-button:hover {
-  background-color: #ffeb99; /* Slightly darker yellow on hover */
+  background-color: #1e7e34; /* Darker green on hover */
   box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(255, 255, 255, 0.5); /* Inset shadow for pressed effect */
 }
 

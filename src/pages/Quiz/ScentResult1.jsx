@@ -9,7 +9,7 @@ const ScentResult1 = ({ onNext }) => {
         <h2>Scent Result 1</h2>
         <p>You love lasting fragrance - Option 1!</p>
       </div>
-      <ResultFooter onNext={onNext} nextButtonText="Next" />
+      <ResultFooter onNext={onNext} nextButtonText="ถัดไป" />
     </div>
   );
 };

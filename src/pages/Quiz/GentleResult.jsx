@@ -9,7 +9,7 @@ const GentleResult = ({ onNext }) => {
         <h2>Gentle Result</h2>
         <p>You prefer gentle and refreshing products!</p>
       </div>
-      <ResultFooter onNext={onNext} nextButtonText="Next" />
+      <ResultFooter onNext={onNext} nextButtonText="ถัดไป" />
     </div>
   );
 };
