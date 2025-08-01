@@ -60,6 +60,47 @@
   }
 }
 
+/* Theme-based color variations */
+.download-button.theme-sakura {
+  background: linear-gradient(135deg, #ff69b4, #ff1493);
+}
+
+.download-button.theme-sakura:hover {
+  background: linear-gradient(135deg, #ff1493, #ff69b4);
+}
+
+.download-button.theme-peach {
+  background: linear-gradient(135deg, #ff8c69, #ff6347);
+}
+
+.download-button.theme-peach:hover {
+  background: linear-gradient(135deg, #ff6347, #ff8c69);
+}
+
+.download-button.theme-lavender {
+  background: linear-gradient(135deg, #9370db, #8a2be2);
+}
+
+.download-button.theme-lavender:hover {
+  background: linear-gradient(135deg, #8a2be2, #9370db);
+}
+
+.download-button.theme-honey {
+  background: linear-gradient(135deg, #ffa500, #ff8c00);
+}
+
+.download-button.theme-honey:hover {
+  background: linear-gradient(135deg, #ff8c00, #ffa500);
+}
+
+.download-button.theme-apple {
+  background: linear-gradient(135deg, #32cd32, #228b22);
+}
+
+.download-button.theme-apple:hover {
+  background: linear-gradient(135deg, #228b22, #32cd32);
+}
+
 /* Kiosk large screen styles */
 @media (min-width: 1000px) {
   .download-button {

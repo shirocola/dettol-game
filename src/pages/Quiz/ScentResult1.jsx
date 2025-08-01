@@ -4,12 +4,8 @@ import ResultFooter from '../../components/ResultFooter/ResultFooter';
 
 const ScentResult1 = ({ onNext }) => {
   return (
-    <div className="quiz-result-container">
-      <div className="quiz-result-card">
-        <h2>Scent Result 1</h2>
-        <p>You love lasting fragrance - Option 1!</p>
-      </div>
-      <ResultFooter onNext={onNext} nextButtonText="ถัดไป" />
+    <div className="quiz-result-container sakura">
+      <ResultFooter onNext={onNext} nextButtonText="ถัดไป" theme="sakura" />
     </div>
   );
 };

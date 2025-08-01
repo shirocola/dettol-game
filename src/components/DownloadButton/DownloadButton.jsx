@@ -1,11 +1,11 @@
 import React from 'react';
 import './DownloadButton.css';
 
-const DownloadButton = ({ onClick }) => {
+const DownloadButton = ({ onClick, theme }) => {
   return (
-    <button className="download-button" onClick={onClick}>
+    <button className={`download-button ${theme ? `theme-${theme}` : ''}`} onClick={onClick}>
       <span className="download-icon">⬇</span>
-      Download
+      ดาวน์โหลด
     </button>
   );
 };

@@ -3,13 +3,36 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  min-height: 100dvh; /* Dynamic viewport height for mobile */
+  height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile */
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 20px;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100vw;
   box-sizing: border-box;
-  overflow-y: auto;
+  overflow: hidden;
+}
+
+/* Background variations for different categories */
+.quiz-result-container.lavender {
+  background-image: url('/lavender-result.png');
+}
+
+.quiz-result-container.honey {
+  background-image: url('/honey-result.png');
+}
+
+.quiz-result-container.sakura {
+  background-image: url('/sakura-result.png');
+}
+
+.quiz-result-container.peach {
+  background-image: url('/peach-result.png');
+}
+
+.quiz-result-container.apple {
+  background-image: url('/apple-result.png');
 }
 
 .quiz-result-card {

@@ -4,12 +4,8 @@ import ResultFooter from '../../components/ResultFooter/ResultFooter';
 
 const GentleResult = ({ onNext }) => {
   return (
-    <div className="quiz-result-container">
-      <div className="quiz-result-card">
-        <h2>Gentle Result</h2>
-        <p>You prefer gentle and refreshing products!</p>
-      </div>
-      <ResultFooter onNext={onNext} nextButtonText="ถัดไป" />
+    <div className="quiz-result-container apple">
+      <ResultFooter onNext={onNext} nextButtonText="ถัดไป" theme="apple" />
     </div>
   );
 };

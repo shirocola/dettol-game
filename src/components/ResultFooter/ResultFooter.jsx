@@ -4,7 +4,7 @@ import DownloadButton from '../DownloadButton/DownloadButton';
 import Button from '../Button/Button';
 import './ResultFooter.css';
 
-const ResultFooter = ({ onDownload, onNext, nextButtonText = "ถัดไป" }) => {
+const ResultFooter = ({ onDownload, onNext, nextButtonText = "ถัดไป", theme }) => {
   const handleDownload = async () => {
     if (onDownload) {
       onDownload();
@@ -64,7 +64,7 @@ const ResultFooter = ({ onDownload, onNext, nextButtonText = "ถัดไป" }
   return (
     <div className="result-footer">
       <div className="footer-buttons">
-        <DownloadButton onClick={handleDownload} />
+        <DownloadButton onClick={handleDownload} theme={theme} />
         <Button 
           text={nextButtonText} 
           onClick={onNext}

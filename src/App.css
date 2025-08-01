@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'UID Deep Sea';
+  src: url('../font/UID Deep sea 2021.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Ensure full-screen layout for all devices */
 html, body, #root {
   margin: 0;
@@ -187,11 +194,13 @@ html, body, #root {
 
 .start-screen-text h1 .with-dettol {
   color: darkgreen;
+  font-family: 'UID Deep Sea', Arial, sans-serif;
 }
 
 .start-screen-text h1 .dettol {
   color: darkgreen;
   font-size: 2.5rem;
+  font-family: 'UID Deep Sea', Arial, sans-serif;
 }
 
 .start-screen-text h2 {
