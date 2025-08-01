@@ -4,16 +4,8 @@ import ResultFooter from '../../components/ResultFooter/ResultFooter';
 
 const ScentQuote2 = ({ onNext }) => {
   return (
-    <div className="quote-result-container">
-      <div className="quote-result-card">
-        <div className="quote-icon">✨</div>
-        <h2>Scent Quote</h2>
-        <div className="quote-text">
-          <p>"Elegance is when the inside is as beautiful as the outside. Your appreciation for fine fragrances reflects your refined taste."</p>
-        </div>
-        <div className="quote-author">- Dettol ProSkin</div>
-      </div>
-      <ResultFooter onNext={onNext} nextButtonText="เล่นอีกครั้ง" />
+    <div className="quote-result-container peach">
+      <ResultFooter onNext={onNext} nextButtonText="เล่นอีกครั้ง" theme="peach" />
     </div>
   );
 };
