@@ -5,7 +5,7 @@ import ResultFooter from '../../components/ResultFooter/ResultFooter';
 const ProtectionQuote = ({ onNext }) => {
   return (
     <div className="quote-result-container honey">
-      <ResultFooter onNext={onNext} nextButtonText="เล่นอีกครั้ง" theme="honey" />
+      <ResultFooter onNext={onNext} nextButtonText="กลับสู่หน้าหลัก" theme="honey" />
     </div>
   );
 };

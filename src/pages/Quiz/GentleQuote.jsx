@@ -5,7 +5,7 @@ import ResultFooter from '../../components/ResultFooter/ResultFooter';
 const GentleQuote = ({ onNext }) => {
   return (
     <div className="quote-result-container apple">
-      <ResultFooter onNext={onNext} nextButtonText="เล่นอีกครั้ง" theme="apple" />
+      <ResultFooter onNext={onNext} nextButtonText="กลับสู่หน้าหลัก" theme="apple" />
     </div>
   );
 };

@@ -5,7 +5,7 @@ import ResultFooter from '../../components/ResultFooter/ResultFooter';
 const EfficiencyQuote = ({ onNext }) => {
   return (
     <div className="quote-result-container lavender">
-      <ResultFooter onNext={onNext} nextButtonText="เล่นอีกครั้ง" theme="lavender" />
+      <ResultFooter onNext={onNext} nextButtonText="กลับสู่หน้าหลัก" theme="lavender" />
     </div>
   );
 };

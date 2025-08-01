@@ -1,12 +1,20 @@
+@font-face {
+  font-family: 'DB HeaventRounded';
+  src: url('../../font/DB HeaventRoundedv3.2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .download-button {
-  width: 200px;
-  padding: 12px;
-  font-size: 16px;
-  font-weight: bold;
+  width: 180px;
+  padding: 10px 16px;
+  font-size: 36px;
+  font-weight: 900;
+  font-family: 'DB HeaventRounded', sans-serif;
   color: white;
   background: linear-gradient(135deg, #28a745, #20c997);
   border: none;
-  border-radius: 12px;
+  border-radius: 20px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.1);
   cursor: pointer;
   transition: all 0.3s ease;
@@ -15,6 +23,7 @@
   justify-content: center;
   gap: 8px;
   margin: 0 auto;
+  min-height: 45px;
 }
 
 .download-button:hover {
@@ -36,10 +45,10 @@
 /* Mobile responsive styles */
 @media (max-width: 768px) {
   .download-button {
-    width: 180px;
-    padding: 10px;
-    font-size: 14px;
-    min-height: 50px;
+    width: 160px;
+    padding: 8px 14px;
+    font-size: 30px;
+    min-height: 40px;
   }
   
   .download-icon {
@@ -49,10 +58,10 @@
 
 @media (max-width: 480px) {
   .download-button {
-    width: 160px;
-    padding: 8px;
-    font-size: 13px;
-    min-height: 45px;
+    width: 140px;
+    padding: 6px 12px;
+    font-size: 26px;
+    min-height: 35px;
   }
   
   .download-icon {
@@ -104,10 +113,10 @@
 /* Kiosk large screen styles */
 @media (min-width: 1000px) {
   .download-button {
-    width: 300px;
-    padding: 20px;
-    font-size: 24px;
-    min-height: 80px;
+    width: 220px;
+    padding: 12px 20px;
+    font-size: 42px;
+    min-height: 55px;
   }
   
   .download-icon {
