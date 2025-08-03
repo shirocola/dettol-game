@@ -161,7 +161,7 @@ html, body, #root {
 .start-screen {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 100vh;
   height: 100dvh; /* Dynamic viewport height for mobile */
@@ -170,6 +170,27 @@ html, body, #root {
   padding: 20px;
   box-sizing: border-box;
   overflow-y: auto;
+}
+
+.start-screen-header {
+  flex: 0 0 auto;
+}
+
+.start-screen-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-screen-footer {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 120px; /* Move button lower on the page */
 }
 
 .start-screen-text h1 {

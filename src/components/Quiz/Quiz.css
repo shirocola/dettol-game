@@ -264,30 +264,28 @@
 
 /* Next/Finish button */
 .next-button-container, .finish-button-container {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-}
-
-.finish-button-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  position: static;
+  /* Ensure centering in grid/column layouts */
+  grid-column: 1 / -1;
 }
 
 .next-button, .finish-button {
+  max-width: 300px;
   width: 100%;
-  padding: 15px;
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #333;
-  font-weight: 700;
-  font-size: 18px;
-  border: none;
   border-radius: 15px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .finish-button {
@@ -352,6 +350,18 @@
 .next-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.next-button.green, .finish-button.green {
+  background-color: #008631 !important;
+  color: #fff !important;
+}
+
+.next-button.green:disabled, .finish-button.green:disabled {
+  background-color: #bdbdbd !important;
+  color: #fff !important;
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
 /* Responsive design */

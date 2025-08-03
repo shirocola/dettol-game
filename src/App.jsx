@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './App.css';
 import './pages/AgeSelection/AgeSelection.css'; 
-import StartPage from './pages/StartPage/StartPage';
 import AgeSelection from './pages/AgeSelection/AgeSelection';
 import DettolCircle from './components/DettolCircle/DettolCircle'; 
 import Button from './components/Button/Button'; 
@@ -23,7 +22,7 @@ import LazyBackgroundImage from './components/LazyBackgroundImage/LazyBackground
 function App() {
   const [gameStep, setGameStep] = useState(0); // 0: Start Screen, 1: Age Selection, 2: Start Page, 3: Quiz, 4-8: Results, 9-13: Quotes, 14: Process
   const [quizResult, setQuizResult] = useState(null);
-  const gameUrl = "https://dettol-game.vercel.app/";
+  // const gameUrl = "https://dettol-game.vercel.app/";
 
   const smoothTransition = (nextStep, delay = 300) => {
     setTimeout(() => {
@@ -36,12 +35,9 @@ function App() {
   };
 
   const handleNext = () => {
-    smoothTransition(2); // Navigate to Start Page
-  };
-
-  const handleStartQuiz = () => {
     smoothTransition(3); // Navigate to Quiz Complete
   };
+
 
   const handleQuizComplete = (resultRoute, answers) => {
     setQuizResult({ route: resultRoute, answers });
@@ -106,23 +102,18 @@ function App() {
       className="app-container"
     >
       {gameStep === 0 && (
-        <div className="start-screen game-screen">
-          <DettolCircle />
-          <div className="start-screen-text">
-            <h1><span className="match-your">MATCH YOUR</span> <br /> <span className="love-story">LOVE STORY</span> <br /> <span className="with-dettol">with </span><span className="dettol">Dettol</span></h1>
+        <LazyBackgroundImage 
+          src="/start-game.png" 
+          className="start-screen game-screen"
+        >
+          <div className="start-screen-footer">
+            <Button text="เล่น" onClick={handleStartGame} className="age-button smooth-button" />
           </div>
-          <Button text="เล่น!" onClick={handleStartGame} className="age-button smooth-button" />
-          <QRCodeComponent url={gameUrl} size={200} />
-        </div>
+        </LazyBackgroundImage>
       )}
       {gameStep === 1 && (
         <div className="game-screen">
           <AgeSelection onNext={handleNext} />
-        </div>
-      )}
-      {gameStep === 2 && (
-        <div className="game-screen">
-          <StartPage onStart={handleStartQuiz} />
         </div>
       )}
       {gameStep === 3 && (

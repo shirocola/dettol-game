@@ -70,6 +70,49 @@
   z-index: -1; /* Place the background behind all content */
 }
 
+.age-selection-bg-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.age-selection-bg {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.age-btn {
+  position: absolute;
+  left: 50%;
+  width: 60vw;
+  max-width: 400px;
+  height: 60px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  transform: translateX(-50%);
+}
+
+/* Adjust these top values to match the button positions in your PNG */
+.btn1 { top: 32vh; }
+.btn2 { top: 40vh; }
+.btn3 { top: 48vh; }
+.btn4 { top: 56vh; }
+.btn5 { top: 64vh; }
+
+/* Optional: add :hover for debug or accessibility */
+.age-btn:focus, .age-btn:hover {
+  outline: 2px solid #4caf50;
+  background: rgba(76,175,80,0.1);
+}
+
 /* Logo styles */
 .logo-container {
   margin-bottom: 20px; /* Add spacing below the logo */

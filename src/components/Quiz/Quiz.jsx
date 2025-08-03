@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Quiz.css';
+import Button from '../Button/Button';
 
 const DettolQuizComplete = ({ onQuizComplete }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -189,9 +190,11 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
       [currentQuestion]: answerId
     };
     setSelectedAnswers(newAnswers);
+  };
 
+  const handleNextQuestion = () => {
     if (currentQuestion < questions.length - 1) {
-      setTimeout(() => setCurrentQuestion(currentQuestion + 1), 500); // Smooth transition
+      setCurrentQuestion(currentQuestion + 1);
     }
   };
 
@@ -266,17 +269,27 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
               )}
             </button>
           ))}
+          {/* Next button always visible, but disabled until answer is selected */}
+          {currentQuestion < questions.length - 1 && (
+            <div className="next-button-container">
+              <Button
+                text="ถัดไป"
+                onClick={handleNextQuestion}
+                className="smooth-button"
+                disabled={!selectedAnswers[currentQuestion]}
+              />
+            </div>
+          )}
         </div>
-        
         {/* Finish button for last question */}
-        {currentQuestion === questions.length - 1 && selectedAnswers[currentQuestion] && (
+        {currentQuestion === questions.length - 1 && (
           <div className="finish-button-container">
-            <button 
-              className="finish-button"
+            <Button
+              text="เสร็จสิ้น"
               onClick={handleFinishQuiz}
-            >
-              Finish
-            </button>
+              className="smooth-button"
+              disabled={!selectedAnswers[currentQuestion]}
+            />
           </div>
         )}
         
