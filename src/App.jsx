@@ -17,7 +17,7 @@ import ScentQuote1 from './pages/Quiz/ScentQuote1';
 import ScentQuote2 from './pages/Quiz/ScentQuote2';
 import GentleQuote from './pages/Quiz/GentleQuote';
 import Process from './pages/Process/Process';
-import LazyBackgroundImage from './components/LazyBackgroundImage/LazyBackgroundImage';
+import ResponsiveImage from './components/ResponsiveImage/ResponsiveImage';
 
 function App() {
   const [gameStep, setGameStep] = useState(0); // 0: Start Screen, 1: Age Selection, 2: Start Page, 3: Quiz, 4-8: Results, 9-13: Quotes, 14: Process
@@ -97,19 +97,19 @@ function App() {
   };
 
   return (
-    <LazyBackgroundImage 
+    <ResponsiveImage 
       src="/BG-Cream.png" 
       className="app-container"
     >
       {gameStep === 0 && (
-        <LazyBackgroundImage 
+        <ResponsiveImage 
           src="/start-game.png" 
           className="start-screen game-screen"
         >
           <div className="start-screen-footer">
             <Button text="เล่น" onClick={handleStartGame} className="age-button smooth-button" />
           </div>
-        </LazyBackgroundImage>
+        </ResponsiveImage>
       )}
       {gameStep === 1 && (
         <div className="game-screen">
@@ -177,7 +177,7 @@ function App() {
         </div>
       )}
       
-    </LazyBackgroundImage>
+    </ResponsiveImage>
   );
 }
 

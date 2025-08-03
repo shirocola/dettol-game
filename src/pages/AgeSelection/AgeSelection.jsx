@@ -1,4 +1,5 @@
 import './AgeSelection.css';
+import OptimizedImage from '../../components/OptimizedImage/OptimizedImage';
 
 const AgeSelection = ({ onNext }) => {
   const handleAgeSelection = (ageRange) => {
@@ -9,7 +10,7 @@ const AgeSelection = ({ onNext }) => {
   return (
     <div className="age-selection-bg-container">
       {/* Background image */}
-      <img src="/age-selection.png" alt="Age Selection" className="age-selection-bg" />
+      <OptimizedImage src="/age-selection.png" alt="Age Selection" className="age-selection-bg" />
       {/* Overlay buttons */}
       <button className="age-btn btn1" onClick={() => handleAgeSelection('under 18')} aria-label="อายุต่ำกว่า 18" />
       <button className="age-btn btn2" onClick={() => handleAgeSelection('18-24')} aria-label="18 - 24 ปี" />
