@@ -23,8 +23,28 @@ html, body, #root {
   min-height: 100dvh;
   overflow-x: hidden;
   -webkit-user-select: none;
+  user-select: none;
   -webkit-touch-callout: none;
   -webkit-tap-highlight-color: transparent;
+}
+
+/* Fullscreen mode optimizations */
+html:fullscreen, html:-webkit-full-screen, html:-moz-full-screen {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body:fullscreen, body:-webkit-full-screen, body:-moz-full-screen {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#root:fullscreen, #root:-webkit-full-screen, #root:-moz-full-screen {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 #root {

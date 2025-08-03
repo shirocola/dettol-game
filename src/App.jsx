@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import './pages/AgeSelection/AgeSelection.css'; 
 import AgeSelection from './pages/AgeSelection/AgeSelection';
@@ -27,6 +27,50 @@ function App() {
   
   // Preload next screen images for faster transitions
   useImagePreloader(gameStep);
+
+  // Fullscreen functionality
+  const enterFullscreen = async () => {
+    try {
+      const elem = document.documentElement;
+      if (elem.requestFullscreen) {
+        await elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) {
+        await elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) {
+        await elem.msRequestFullscreen();
+      }
+      
+      // Lock orientation to portrait on mobile devices
+      if (screen.orientation && screen.orientation.lock) {
+        try {
+          await screen.orientation.lock('portrait');
+        } catch (err) {
+          console.log('Orientation lock not supported:', err);
+        }
+      }
+    } catch (err) {
+      console.log('Fullscreen request failed:', err);
+    }
+  };
+
+  // Auto-enter fullscreen when game starts
+  useEffect(() => {
+    // Add fullscreen request on first user interaction
+    const handleFirstInteraction = () => {
+      enterFullscreen();
+      // Remove the event listener after first interaction
+      document.removeEventListener('touchstart', handleFirstInteraction);
+      document.removeEventListener('click', handleFirstInteraction);
+    };
+
+    document.addEventListener('touchstart', handleFirstInteraction, { passive: true });
+    document.addEventListener('click', handleFirstInteraction);
+
+    return () => {
+      document.removeEventListener('touchstart', handleFirstInteraction);
+      document.removeEventListener('click', handleFirstInteraction);
+    };
+  }, []);
 
   const smoothTransition = (nextStep, delay = 300) => {
     setTimeout(() => {
