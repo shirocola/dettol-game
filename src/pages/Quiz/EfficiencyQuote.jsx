@@ -1,12 +1,16 @@
 import React from 'react';
 import './QuoteResult.css';
 import ResultFooter from '../../components/ResultFooter/ResultFooter';
+import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 
 const EfficiencyQuote = ({ onNext }) => {
   return (
-    <div className="quote-result-container lavender">
+    <ResponsiveImage 
+      src="/lavender-qoute.png" 
+      className="quote-result-container lavender"
+    >
       <ResultFooter onNext={onNext} nextButtonText="กลับสู่หน้าหลัก" theme="lavender" />
-    </div>
+    </ResponsiveImage>
   );
 };
 

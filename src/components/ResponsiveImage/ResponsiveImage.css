@@ -1,11 +1,25 @@
 .responsive-image {
   transition: background-image 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background-size: 100% 100% !important; /* Stretch to exact screen size */
+  background-position: center !important;
+  background-repeat: no-repeat !important;
 }
 
-/* Ensure images are properly contained on mobile */
+/* Stretch to exact screen size on all devices */
 @media (max-width: 430px) {
   .responsive-image {
-    background-size: cover;
+    background-size: 100% 100% !important; /* Stretch to exact screen size on mobile */
+    background-repeat: no-repeat !important; /* No image repetition */
+    background-position: center !important;
     background-attachment: scroll; /* Better performance on mobile */
   }
 }
@@ -13,7 +27,9 @@
 /* Optimize for tablet */
 @media (min-width: 431px) and (max-width: 768px) {
   .responsive-image {
-    background-size: cover;
+    background-size: 100% 100% !important; /* Stretch to exact screen size on tablet */
+    background-repeat: no-repeat !important; /* No image repetition */
+    background-position: center !important;
     background-attachment: scroll;
   }
 }
@@ -21,7 +37,9 @@
 /* Desktop optimizations */
 @media (min-width: 769px) {
   .responsive-image {
-    background-size: cover;
+    background-size: 100% 100% !important; /* Stretch to exact screen size on desktop */
+    background-repeat: no-repeat !important; /* No image repetition */
+    background-position: center !important;
     background-attachment: fixed; /* Can use fixed on desktop */
   }
 }

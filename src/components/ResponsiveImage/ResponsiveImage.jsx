@@ -130,11 +130,12 @@ const ResponsiveImage = ({
   }, [src, currentSrc, isLoaded]);
 
   const combinedStyle = {
+    ...style,
     backgroundImage: isLoaded && currentSrc ? `url(${currentSrc})` : 'none',
-    backgroundSize: 'cover',
+    backgroundSize: '100% 100%', // Stretch to exact screen dimensions
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-    ...style
+    backgroundAttachment: 'scroll'
   };
 
   if (isLoading) {

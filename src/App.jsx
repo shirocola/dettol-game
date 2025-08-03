@@ -18,11 +18,15 @@ import ScentQuote2 from './pages/Quiz/ScentQuote2';
 import GentleQuote from './pages/Quiz/GentleQuote';
 import Process from './pages/Process/Process';
 import ResponsiveImage from './components/ResponsiveImage/ResponsiveImage';
+import useImagePreloader from './hooks/useImagePreloader';
 
 function App() {
   const [gameStep, setGameStep] = useState(0); // 0: Start Screen, 1: Age Selection, 2: Start Page, 3: Quiz, 4-8: Results, 9-13: Quotes, 14: Process
   const [quizResult, setQuizResult] = useState(null);
   // const gameUrl = "https://dettol-game.vercel.app/";
+  
+  // Preload next screen images for faster transitions
+  useImagePreloader(gameStep);
 
   const smoothTransition = (nextStep, delay = 300) => {
     setTimeout(() => {

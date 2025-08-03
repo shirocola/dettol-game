@@ -103,6 +103,15 @@ html, body, #root {
   }
 }
 
+@keyframes fadeInMobile {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes fadeOut {
   from {
     opacity: 1;
@@ -294,6 +303,19 @@ html, body, #root {
     margin-top: 30px;
     width: auto;
     min-width: 150px;
+  }
+  
+  /* Optimize animations for mobile performance */
+  .game-screen {
+    animation: fadeInMobile 0.3s ease-out;
+  }
+  
+  .smooth-button {
+    transition: transform 0.2s ease;
+  }
+  
+  .smooth-button:active {
+    transition: transform 0.1s ease;
   }
 }
 

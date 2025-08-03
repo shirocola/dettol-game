@@ -1,38 +1,23 @@
 .quote-result-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   height: 100vh;
   height: 100dvh; /* Dynamic viewport height for mobile */
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
   width: 100vw;
   box-sizing: border-box;
   overflow: hidden;
+  padding-bottom: 40px;
 }
 
-/* Background variations for different categories */
-.quote-result-container.lavender {
-  background-image: url('/lavender-qoute.png');
-}
-
-.quote-result-container.honey {
-  background-image: url('/honey-quote.png');
-}
-
-.quote-result-container.sakura {
-  background-image: url('/sakura-quote.png');
-}
-
-.quote-result-container.peach {
-  background-image: url('/peach-quote.png');
-}
-
+/* Remove background image CSS since ResponsiveImage handles it */
+.quote-result-container.lavender,
+.quote-result-container.honey,
+.quote-result-container.sakura,
+.quote-result-container.peach,
 .quote-result-container.apple {
-  background-image: url('/apple-quote.png');
+  /* No background-image needed - ResponsiveImage handles this */
 }
 
 .quote-result-card {
@@ -103,8 +88,8 @@
 @media (max-width: 768px) {
   .quote-result-container {
     padding: 15px;
-    justify-content: flex-start;
-    padding-top: 40px;
+    justify-content: flex-end;
+    padding-bottom: 60px;
   }
   
   .quote-result-card {

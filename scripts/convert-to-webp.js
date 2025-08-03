@@ -34,6 +34,11 @@ const PRIORITY_FILES = [
   'Sakura-1.png',           // 3.1MB
   'peach-result.png',       // 3.0MB
   'Object1.png',            // 2.8MB
+  'peach-quote.png',        // 1.1MB
+  'apple-quote.png',        // 1.0MB
+  'honey-quote.png',        // 0.9MB
+  'sakura-quote.png',       // 0.9MB
+  'lavender-qoute.png',     // Note: typo in filename
 ];
 
 async function optimizeImage(inputPath, outputPath, options = {}) {
