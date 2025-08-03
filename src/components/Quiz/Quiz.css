@@ -382,19 +382,37 @@
   .answer-button.text-answer {
     font-size: 14px;
     padding: 12px 15px;
+    /* Ensure buttons are touchable on mobile */
+    min-height: 48px;
+    touch-action: manipulation;
+  }
+  
+  .answer-button.image-answer {
+    /* Ensure image buttons are touchable on mobile */
+    min-height: 120px;
+    touch-action: manipulation;
   }
   
   .answers-container.image-answers {
-    gap: 10px;
+    gap: 15px;
+    margin-bottom: 60px; /* More space for button */
   }
   
-  .answer-icon {
-    font-size: 30px;
+  .answer-icon img {
+    width: 80px !important;
+    height: 80px !important;
   }
   
   .answer-label {
     font-size: 12px;
     padding: 6px 8px;
+  }
+  
+  .next-button-container, .finish-button-container {
+    margin-top: 30px;
+    position: relative;
+    /* Ensure button is easily accessible */
+    min-height: 60px;
   }
   
   .dettol-text {

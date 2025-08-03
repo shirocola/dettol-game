@@ -2,7 +2,17 @@ import React from 'react';
 import './Button.css';
 
 const Button = ({ text, onClick, className, disabled = false }) => {
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!disabled && onClick) {
+      onClick();
+    }
+  };
+
+  const handleTouchEnd = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     if (!disabled && onClick) {
       onClick();
     }
@@ -12,7 +22,9 @@ const Button = ({ text, onClick, className, disabled = false }) => {
     <button 
       className={`button ${className} ${disabled ? 'disabled' : ''}`} 
       onClick={handleClick}
+      onTouchEnd={handleTouchEnd}
       disabled={disabled}
+      style={{ touchAction: 'manipulation' }}
     >
       {text}
     </button>

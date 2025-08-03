@@ -15,28 +15,28 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
         { 
           id: "romantic", 
           text: "โรแมนติก หอมอบอุ่น",
-          icon: <img src="/romantic.png" alt="romantic" style={{width: 160, height: 160}} />,
+          icon: <img src="/romantic.png" alt="romantic" style={{width: 160, height: 160}} />, 
           bgColor: "#c8e6c8",
           description: "โรแมนติก หอมอบอุ่น"
         },
         { 
           id: "fresh", 
           text: "สดใส ขี้อ้อน ใกล้ชิด",
-          icon: <img src="/romantic.png" alt="romantic" style={{width: 160, height: 160}} />,
+          icon: <img src="/fresh.png" alt="fresh" style={{width: 160, height: 160}} />, 
           bgColor: "#c8e6c8",
           description: "สดใส ขี้อ้อน ใกล้ชิด"
         },
         { 
           id: "simple", 
           text: "เรียบง่าย เบาสบาย",
-          icon: <img src="/simple.png" alt="romantic" style={{width: 160, height: 160}} />,
+          icon: <img src="/simple.png" alt="simple" style={{width: 160, height: 160}} />, 
           bgColor: "#c8e6c8",
           description: "เรียบง่าย เบาสบาย"
         },
         { 
           id: "fun", 
           text: "ตื่นเต้น เฟรชสดชื่น",
-          icon: <img src="/fresh.png" alt="romantic" style={{width: 160, height: 160}} />,
+          icon: <img src="/fun.png" alt="fun" style={{width: 160, height: 160}} />, 
           bgColor: "#c8e6c8",
           description: "ตื่นเต้น เฟรชสดชื่น"
         }
@@ -50,28 +50,28 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
         { 
           id: "brush", 
           text: "แปรงฟัน",
-          icon: <img src="/brush.png" alt="romantic" style={{width: 160, height: 160}} />,
+          icon: <img src="/brush.png" alt="brush" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "แปรงฟัน"
         },
         { 
           id: "bath", 
           text: "แช่น้ำ",
-          icon: <img src="/fresh.png" alt="romantic" style={{width: 160, height: 160}} />,
+          icon: <img src="/fresh.png" alt="fresh" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "แช่น้ำ"
         },
         { 
           id: "foam", 
           text: "ฟองสบู่",
-          icon: <img src="/foam.png" alt="romantic" style={{width: 160, height: 160}} />,
+          icon: <img src="/foam.png" alt="foam" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "ฟองสบู่"
         },
         { 
           id: "shower", 
           text: "สระผม",
-          icon: <img src="/hairwash.png" alt="romantic" style={{width: 160, height: 160}} />,
+          icon: <img src="/hairwash.png" alt="hairwash" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "สระผม"
         }
@@ -85,28 +85,28 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
         { 
           id: "hand", 
           text: "มือ",
-          icon: <img src="/hand.png" alt="romantic" style={{width: 160, height: 160}} />,
+          icon: <img src="/hand.png" alt="hand" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "มือ"
         },
         { 
           id: "back", 
           text: "หลัง",
-          icon: <img src="/back.png" alt="romantic" style={{width: 160, height: 160}} />,
+          icon: <img src="/back.png" alt="back" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "หลัง"
         },
         { 
           id: "arm", 
           text: "แขน",
-          icon: <img src="/arm.png" alt="romantic" style={{width: 160, height: 160}} />,
+          icon: <img src="/arm.png" alt="arm" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "แขน"
         },
         { 
           id: "body", 
           text: "ลำตัว",
-          icon: <img src="/body.png" alt="romantic" style={{width: 160, height: 160}} />,
+          icon: <img src="/body.png" alt="body" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "ลำตัว"
         }
@@ -120,28 +120,28 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
         { 
           id: "water_quality", 
           text: "อุณหภูมิของน้ำ",
-          icon: <img src="/temp.png" alt="romantic" style={{width: 160, height: 160}} />,
+          icon: <img src="/temp.png" alt="temp" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "อุณหภูมิของน้ำ"
         },
         { 
           id: "scent", 
           text: "กลิ่นหอมของครีมอาบน้ำ",
-          icon: <img src="/scent.png" alt="romantic" style={{width: 160, height: 160}} />,
+          icon: <img src="/scent.png" alt="scent" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "กลิ่นหอมของครีมอาบน้ำ"
         },
         { 
           id: "cleanliness", 
           text: "การสครับ/ขัดผิว",
-          icon: <img src="/scrub.png" alt="romantic" style={{width: 160, height: 160}} />,
+          icon: <img src="/scrub.png" alt="scrub" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "การสครับ/ขัดผิว"
         },
         { 
           id: "feeling", 
           text: "ความรู้สึกสะอาดหลังอาบ",
-          icon: <img src="/clean.png" alt="romantic" style={{width: 160, height: 160}} />,
+          icon: <img src="/clean.png" alt="clean" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "ความรู้สึกสะอาดหลังอาบ"
         }
@@ -155,28 +155,28 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
         { 
           id: "efficiency", 
           text: "ประสิทธิภาพในการทำความสะอาด",
-          icon: <img src="/cleanefficiancy.png" alt="romantic" style={{width: 160, height: 160}} />,
+          icon: <img src="/cleanefficiancy.png" alt="cleanefficiancy" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "ประสิทธิภาพในการทำความสะอาด"
         },
         { 
           id: "protection", 
           text: "การบำรุงผิวหลังอาบน้ำ",
-          icon: <img src="/moiture.png" alt="romantic" style={{width: 160, height: 160}} />,
+          icon: <img src="/moiture.png" alt="moiture" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "การบำรุงผิวหลังอาบน้ำ"
         },
         { 
           id: "scent_lasting", 
           text: "กลิ่นหอมติดตัว",
-          icon: <img src="/longlasting.png" alt="romantic" style={{width: 160, height: 160}} />,
+          icon: <img src="/longlasting.png" alt="longlasting" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "กลิ่นหอมติดตัว"
         },
         { 
           id: "gentle_clean", 
           text: "ความรู้สึกสดชื่นขณะอาบ",
-          icon: <img src="/freshness.png" alt="romantic" style={{width: 160, height: 160}} />,
+          icon: <img src="/freshness.png" alt="freshness" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "ความรู้สึกสดชื่นขณะอาบ"
         }
@@ -257,6 +257,7 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
                 selectedAnswers[currentQuestion] === answer.id ? 'selected' : ''
               }`}
               onClick={() => handleAnswerSelection(answer.id)}
+              onTouchEnd={() => handleAnswerSelection(answer.id)}
               style={currentQ.type === 'image' ? { backgroundColor: answer.bgColor } : {}}
             >
               {currentQ.type === 'image' ? (

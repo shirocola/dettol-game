@@ -48,6 +48,12 @@
   position: relative;
   overflow: hidden;
   min-height: 45px;
+  /* Mobile touch optimizations */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .button::before {
