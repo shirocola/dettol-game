@@ -1,10 +1,25 @@
 import React from 'react';
-import html2canvas from 'html2canvas';
 import DownloadButton from '../DownloadButton/DownloadButton';
 import Button from '../Button/Button';
 import './ResultFooter.css';
 
 const ResultFooter = ({ onDownload, onNext, nextButtonText = "ถัดไป", theme }) => {
+  const getBackgroundImageUrl = () => {
+    // Find the result or quote container
+    const resultContainer = document.querySelector('.quiz-result-container') || 
+                           document.querySelector('.quote-result-container');
+    
+    if (!resultContainer) return null;
+
+    // Get the background image from CSS
+    const computedStyle = window.getComputedStyle(resultContainer);
+    const backgroundImage = computedStyle.backgroundImage;
+    
+    // Extract URL from "url(...)" format
+    const match = backgroundImage.match(/url\(["']?([^"')]+)["']?\)/);
+    return match ? match[1] : null;
+  };
+
   const handleDownload = async () => {
     if (onDownload) {
       onDownload();
@@ -12,51 +27,45 @@ const ResultFooter = ({ onDownload, onNext, nextButtonText = "ถัดไป", 
     }
 
     try {
-      // Find the result container to capture
-      const resultContainer = document.querySelector('.quiz-result-container') || 
-                             document.querySelector('.quote-result-container');
+      // Get the background image URL
+      const imageUrl = getBackgroundImageUrl();
       
-      if (!resultContainer) {
-        console.error('Result container not found');
-        alert('Unable to capture screenshot');
+      if (!imageUrl) {
+        console.error('Background image not found');
+        alert('Unable to find background image');
         return;
       }
 
-      // Hide the footer buttons temporarily during capture
-      const footer = document.querySelector('.result-footer');
-      if (footer) {
-        footer.style.display = 'none';
-      }
-
-      // Create canvas from the result container
-      const canvas = await html2canvas(resultContainer, {
-        backgroundColor: null,
-        scale: 2, // Higher quality
-        useCORS: true,
-        allowTaint: true,
-        width: resultContainer.offsetWidth,
-        height: resultContainer.offsetHeight
-      });
-
-      // Restore the footer buttons after capture
-      if (footer) {
-        footer.style.display = '';
-      }
-
-      // Convert canvas to blob and download
-      canvas.toBlob((blob) => {
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = `dettol-proskin-result-${Date.now()}.png`;
+      // Create a temporary link to download the image
+      const link = document.createElement('a');
+      link.href = imageUrl;
+      link.download = `dettol-proskin-${theme || 'result'}-${Date.now()}.png`;
+      
+      // For cross-origin images, we need to fetch and create blob
+      try {
+        const response = await fetch(imageUrl);
+        if (!response.ok) throw new Error('Failed to fetch image');
+        
+        const blob = await response.blob();
+        const blobUrl = URL.createObjectURL(blob);
+        
+        link.href = blobUrl;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-        URL.revokeObjectURL(url);
-      }, 'image/png');
+        
+        // Clean up
+        URL.revokeObjectURL(blobUrl);
+      } catch (fetchError) {
+        // Fallback: try direct download
+        console.log('Direct fetch failed, trying direct download:', fetchError);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
 
     } catch (error) {
-      console.error('Error capturing screenshot:', error);
+      console.error('Error downloading image:', error);
       alert('Error downloading image. Please try again.');
     }
   };
