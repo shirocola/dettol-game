@@ -39,6 +39,25 @@ const PRIORITY_FILES = [
   'honey-quote.png',        // 0.9MB
   'sakura-quote.png',       // 0.9MB
   'lavender-qoute.png',     // Note: typo in filename
+  // Quiz icons
+  'foam.png',               // 435KB
+  'fun.png',                // 388KB
+  'back.png',               // 345KB
+  'moiture.png',            // 337KB
+  'longlasting.png',        // 334KB
+  'body.png',               // 320KB
+  'hairwash.png',           // 314KB
+  'romantic.png',           // 314KB
+  'hand.png',               // 309KB
+  'simple.png',             // 278KB
+  'arm.png',                // 273KB
+  'scent.png',              // 243KB
+  'clean.png',              // 238KB
+  'brush.png',              // 236KB
+  'scrub.png',              // 228KB
+  'temp.png',               // 211KB
+  'freshness.png',          // 162KB
+  'cleanefficiancy.png',    // 99KB
 ];
 
 async function optimizeImage(inputPath, outputPath, options = {}) {

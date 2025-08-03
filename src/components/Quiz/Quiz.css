@@ -147,8 +147,8 @@
 }
 
 .answer-button.text-answer {
-  background-color: rgba(255, 255, 255, 0.9);
-  border: none;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 2px solid #ccc;
   border-radius: 15px;
   padding: 15px 20px;
   font-size: 16px;
@@ -166,9 +166,10 @@
 
 
 .answer-button.text-answer:hover {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(240, 240, 240, 1);
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  border-color: #999;
 }
 
 .answer-button.text-answer:active {
@@ -194,8 +195,8 @@
 }
 
 .answer-button.image-answer {
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 3px solid #ffffff;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 3px solid #fcf8f8;
   border-radius: 15px;
   padding: 0;
   cursor: pointer;
@@ -220,25 +221,28 @@
   height: 100%;
   padding: 10px;
   position: relative;
+  background-color: rgba(118, 184, 118, 0.9);
+  border-radius: 10px;
 }
 
 .answer-icon {
   font-size: 40px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .answer-label {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
   color: #333;
-  padding: 8px 12px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 600;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ccc;
+  width: 90%;
   position: absolute;
-  bottom: -15px;
+  bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -246,6 +250,7 @@
 .answer-button.image-answer:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-color: #999;
 }
 
 .answer-button.image-answer:active {
@@ -263,6 +268,7 @@
 .answer-button.image-answer.selected .answer-label {
   background-color: #008631;
   color: white;
+  border-color: #008631;
 }
 
 /* Next/Finish button */
@@ -415,19 +421,25 @@
     touch-action: manipulation;
   }
   
+  .image-answer-content {
+    padding: 5px;
+  }
+  
   .answers-container.image-answers {
     gap: 15px;
     margin-bottom: 60px; /* More space for button */
   }
   
   .answer-icon img {
-    width: 80px !important;
-    height: 80px !important;
+    width: 160px;
+    height: 160px;
   }
   
   .answer-label {
-    font-size: 12px;
-    padding: 6px 8px;
+    font-size: 14px;
+    padding: 10px 16px;
+    border-radius: 16px;
+    bottom: -16px;
   }
   
   .next-button-container, .finish-button-container {
@@ -593,18 +605,22 @@
   
   .answer-button.image-answer {
     min-height: 140px;
-    padding: 10px;
+  }
+  
+  .image-answer-content {
+    padding: 8px;
   }
   
   .answer-icon img {
-    width: 80px !important;
-    height: 80px !important;
+    width: 160px;
+    height: 160px;
     object-fit: contain;
   }
   
   .answer-label {
-    font-size: 12px;
-    padding: 6px 8px;
-    bottom: -10px;
+    font-size: 14px;
+    padding: 10px 16px;
+    border-radius: 16px;
+    bottom: -16px;
   }
 }
