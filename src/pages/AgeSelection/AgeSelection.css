@@ -90,10 +90,10 @@
 .age-btn {
   position: absolute;
   left: 50%;
-  width: 60vw;
+  width: 50vw;
   max-width: 400px;
-  height: 60px;
-  background: none;
+  height: 40px;
+  background: transparent;
   border: none;
   cursor: pointer;
   z-index: 2;
@@ -101,16 +101,23 @@
 }
 
 /* Adjust these top values to match the button positions in your PNG */
-.btn1 { top: 32vh; }
-.btn2 { top: 40vh; }
-.btn3 { top: 48vh; }
-.btn4 { top: 56vh; }
-.btn5 { top: 64vh; }
+.btn1 { top: calc(32vh + 32px); }
+.btn2 { top: calc(40vh + 36px); }
+.btn3 { top: calc(48vh + 40px); }
+.btn4 { top: calc(56vh + 45px); }
+.btn5 { top: calc(64vh + 45px); }
 
 /* Optional: add :hover for debug or accessibility */
 .age-btn:focus, .age-btn:hover {
-  outline: 2px solid #4caf50;
-  background: rgba(76,175,80,0.1);
+  outline: none;
+  background: transparent;
+}
+
+/* Selected state - visible when clicked */
+.age-btn.selected {
+  background: rgba(0, 255, 0, 0.4);
+  border: 2px solid #00ff00;
+  border-radius: 8px;
 }
 
 /* Logo styles */
