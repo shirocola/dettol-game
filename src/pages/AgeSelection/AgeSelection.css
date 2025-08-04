@@ -113,11 +113,10 @@
   background: transparent;
 }
 
-/* Selected state - visible when clicked */
+/* Selected state - keep invisible */
 .age-btn.selected {
-  background: rgba(0, 255, 0, 0.4);
-  border: 2px solid #00ff00;
-  border-radius: 8px;
+  background: transparent;
+  border: none;
 }
 
 /* Logo styles */
