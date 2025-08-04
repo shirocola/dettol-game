@@ -9,7 +9,7 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
   const questions = [
     {
       id: 1,
-      question: "ความรักที่คุณอยากส่งผู้สำคัญในรูปแบบไหน?",
+      question: "ความรักที่คุณอยากสัมผัสเป็นรูปแบบได ?",
       type: "image",
       answers: [
         { 
@@ -44,7 +44,7 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
     },
     {
       id: 2,
-      question: "เมื่อต้องอาบน้ำ คุณจะทำอะไรเป็นอันดับแรก?",
+      question: "เมื่อต้องอาบน้ำ คุณจะทำอะไรเป็นอันดับแรก ?",
       type: "image",
       answers: [
         { 
@@ -79,7 +79,7 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
     },
     {
       id: 3,
-      question: "คุณดูแลส่วนไหนของร่างกายเป็นอันดับแรก?",
+      question: "คุณถูส่วนไหนของร่างกายเป็นอันดับแรก?",
       type: "image",
       answers: [
         { 

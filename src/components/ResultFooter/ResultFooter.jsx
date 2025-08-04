@@ -17,7 +17,19 @@ const ResultFooter = ({ onDownload, onNext, nextButtonText = "ถัดไป", 
     
     // Extract URL from "url(...)" format
     const match = backgroundImage.match(/url\(["']?([^"')]+)["']?\)/);
-    return match ? match[1] : null;
+    if (!match) return null;
+    
+    let imageUrl = match[1];
+    
+    // Convert WebP URL back to PNG for download
+    // Remove responsive suffixes (-mobile, -tablet, -desktop) and convert .webp to .png
+    imageUrl = imageUrl
+      .replace(/-mobile\.webp$/i, '.png')
+      .replace(/-tablet\.webp$/i, '.png') 
+      .replace(/-desktop\.webp$/i, '.png')
+      .replace(/\.webp$/i, '.png');
+    
+    return imageUrl;
   };
 
   const handleDownload = async () => {
