@@ -44,33 +44,33 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
     },
     {
       id: 2,
-      question: "เมื่อต้องอาบน้ำ คุณจะทำอะไรเป็นอันดับแรก ?",
+      question: "กลิ่นของครีบอาบน้ำแบบใดที่คุณชอบมากที่สุด ?",
       type: "image",
       answers: [
         { 
-          id: "brush", 
-          text: "แปรงฟัน",
+          id: "fruit", 
+          text: "กลิ่นผลไม้",
           icon: <img src="/brush.png" alt="brush" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "แปรงฟัน"
         },
         { 
-          id: "bath", 
-          text: "แช่น้ำ",
+          id: "flower", 
+          text: "กลิ่นดอกไม้",
           icon: <img src="/fresh.png" alt="fresh" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "แช่น้ำ"
         },
         { 
-          id: "foam", 
-          text: "ฟองสบู่",
+          id: "aroma", 
+          text: "กลิ่นอโรม่า",
           icon: <img src="/foam.png" alt="foam" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "ฟองสบู่"
         },
         { 
-          id: "shower", 
-          text: "สระผม",
+          id: "babypowder", 
+          text: "กลิ่นแป้งเด็ก",
           icon: <img src="/hairwash.png" alt="hairwash" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "สระผม"
@@ -114,41 +114,6 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
     },
     {
       id: 4,
-      question: "อะไรคือสิ่งที่ทำให้คุณรู้สึกว่า \"อาบน้ำแล้วสบายตัว\" ที่สุด?",
-      type: "image",
-      answers: [
-        { 
-          id: "water_quality", 
-          text: "อุณหภูมิของน้ำ",
-          icon: <img src="/temp.png" alt="temp" style={{width: 160, height: 160}} />,
-          bgColor: "#c8e6c8",
-          description: "อุณหภูมิของน้ำ"
-        },
-        { 
-          id: "scent", 
-          text: "กลิ่นหอมของครีมอาบน้ำ",
-          icon: <img src="/scent.png" alt="scent" style={{width: 160, height: 160}} />,
-          bgColor: "#c8e6c8",
-          description: "กลิ่นหอมของครีมอาบน้ำ"
-        },
-        { 
-          id: "cleanliness", 
-          text: "การสครับ/ขัดผิว",
-          icon: <img src="/scrub.png" alt="scrub" style={{width: 160, height: 160}} />,
-          bgColor: "#c8e6c8",
-          description: "การสครับ/ขัดผิว"
-        },
-        { 
-          id: "feeling", 
-          text: "ความรู้สึกสะอาดหลังอาบ",
-          icon: <img src="/clean.png" alt="clean" style={{width: 160, height: 160}} />,
-          bgColor: "#c8e6c8",
-          description: "ความรู้สึกสะอาดหลังอาบ"
-        }
-      ]
-    },
-    {
-      id: 5,
       question: "คุณคิดว่าอะไรสำคัญที่สุดในการเลือกครีมอาบน้ำ?",
       type: "image",
       answers: [
