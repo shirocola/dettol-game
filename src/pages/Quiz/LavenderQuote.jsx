@@ -1,0 +1,17 @@
+import React from 'react';
+import './QuoteResult.css';
+import ResultFooter from '../../components/ResultFooter/ResultFooter';
+import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
+
+const LavenderQuote = ({ onNext }) => {
+  return (
+    <ResponsiveImage 
+      src="/lavender-qoute.png" 
+      className="quote-result-container lavender"
+    >
+      <ResultFooter onNext={onNext} nextButtonText="กลับสู่หน้าหลัก" theme="lavender" />
+    </ResponsiveImage>
+  );
+};
+
+export default LavenderQuote;

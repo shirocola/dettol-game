@@ -1,4 +1,28 @@
-# React + Vite
+# Dettol ProSkin Interactive Game
+
+This interactive quiz game helps users discover which Dettol ProSkin variant matches their preferences based on their answers.
+
+## Quiz Logic
+
+The game now uses the first question to determine the result:
+
+**Question 1: "ความรักที่คุณอยากสัมผัสเป็นรูปแบบได ?"**
+
+### Answer Mapping:
+1. **โรแมนติก หอมอบอุ่น (romantic)** → Random selection between Lavender or Sakura
+2. **สดใส ขี้อ้อน ใกล้ชิด (fresh)** → Peach  
+3. **เรียบง่าย เบาสบาย (simple)** → Honey
+4. **ตื่นเต้น เฟรชสดชื่น (fun)** → Apple
+
+## Demo Screenshots (Answer 3 - Honey Result)
+
+### Result Page:
+![Honey Result](https://github.com/user-attachments/assets/2b13d735-14d2-4ea6-9404-0c28cc932eb6)
+
+### Quote Page:
+![Honey Quote](https://github.com/user-attachments/assets/84866137-37b0-4c43-b3a8-dde7b0b08d7d)
+
+## Development
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

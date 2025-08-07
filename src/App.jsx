@@ -10,18 +10,20 @@ import EfficiencyResult from './pages/Quiz/EfficiencyResult';
 import ProtectionResult from './pages/Quiz/ProtectionResult';
 import ScentResult1 from './pages/Quiz/ScentResult1';
 import ScentResult2 from './pages/Quiz/ScentResult2';
+import LavenderResult from './pages/Quiz/LavenderResult';
 import GentleResult from './pages/Quiz/GentleResult';
 import EfficiencyQuote from './pages/Quiz/EfficiencyQuote';
 import ProtectionQuote from './pages/Quiz/ProtectionQuote';
 import ScentQuote1 from './pages/Quiz/ScentQuote1';
 import ScentQuote2 from './pages/Quiz/ScentQuote2';
+import LavenderQuote from './pages/Quiz/LavenderQuote';
 import GentleQuote from './pages/Quiz/GentleQuote';
 import Process from './pages/Process/Process';
 import ResponsiveImage from './components/ResponsiveImage/ResponsiveImage';
 import useImagePreloader from './hooks/useImagePreloader';
 
 function App() {
-  const [gameStep, setGameStep] = useState(0); // 0: Start Screen, 1: Age Selection, 2: Start Page, 3: Quiz, 4-8: Results, 9-13: Quotes, 14: Process
+  const [gameStep, setGameStep] = useState(0); // 0: Start Screen, 1: Age Selection, 2: Start Page, 3: Quiz, 4-9: Results, 10-15: Quotes, 16: Process
   const [quizResult, setQuizResult] = useState(null);
   // const gameUrl = "https://dettol-game.vercel.app/";
   
@@ -90,7 +92,7 @@ function App() {
   const handleQuizComplete = (resultRoute, answers) => {
     setQuizResult({ route: resultRoute, answers });
     // Show process page first
-    setGameStep(14);
+    setGameStep(16);
     
     // After 3 seconds, navigate to result page
     setTimeout(() => {
@@ -107,8 +109,11 @@ function App() {
         case 'scent2':
           setGameStep(7);
           break;
-        case 'gentle':
+        case 'lavender':
           setGameStep(8);
+          break;
+        case 'gentle':
+          setGameStep(9);
           break;
         default:
           setGameStep(4);
@@ -125,22 +130,25 @@ function App() {
     // Navigate to corresponding quote page
     switch (resultStep) {
       case 4: // EfficiencyResult
-        smoothTransition(9);
-        break;
-      case 5: // ProtectionResult
         smoothTransition(10);
         break;
-      case 6: // ScentResult1
+      case 5: // ProtectionResult
         smoothTransition(11);
         break;
-      case 7: // ScentResult2
+      case 6: // ScentResult1
         smoothTransition(12);
         break;
-      case 8: // GentleResult
+      case 7: // ScentResult2
         smoothTransition(13);
         break;
+      case 8: // LavenderResult
+        smoothTransition(14);
+        break;
+      case 9: // GentleResult
+        smoothTransition(15);
+        break;
       default:
-        smoothTransition(9);
+        smoothTransition(10);
     }
   };
 
@@ -191,35 +199,45 @@ function App() {
       )}
       {gameStep === 8 && (
         <div className="game-screen">
-          <GentleResult onNext={() => handleShowQuote(8)} />
+          <LavenderResult onNext={() => handleShowQuote(8)} />
         </div>
       )}
       {gameStep === 9 && (
         <div className="game-screen">
-          <EfficiencyQuote onNext={handlePlayAgain} />
+          <GentleResult onNext={() => handleShowQuote(9)} />
         </div>
       )}
       {gameStep === 10 && (
         <div className="game-screen">
-          <ProtectionQuote onNext={handlePlayAgain} />
+          <EfficiencyQuote onNext={handlePlayAgain} />
         </div>
       )}
       {gameStep === 11 && (
         <div className="game-screen">
-          <ScentQuote1 onNext={handlePlayAgain} />
+          <ProtectionQuote onNext={handlePlayAgain} />
         </div>
       )}
       {gameStep === 12 && (
         <div className="game-screen">
-          <ScentQuote2 onNext={handlePlayAgain} />
+          <ScentQuote1 onNext={handlePlayAgain} />
         </div>
       )}
       {gameStep === 13 && (
         <div className="game-screen">
-          <GentleQuote onNext={handlePlayAgain} />
+          <ScentQuote2 onNext={handlePlayAgain} />
         </div>
       )}
       {gameStep === 14 && (
+        <div className="game-screen">
+          <LavenderQuote onNext={handlePlayAgain} />
+        </div>
+      )}
+      {gameStep === 15 && (
+        <div className="game-screen">
+          <GentleQuote onNext={handlePlayAgain} />
+        </div>
+      )}
+      {gameStep === 16 && (
         <div className="game-screen">
           <Process />
         </div>
