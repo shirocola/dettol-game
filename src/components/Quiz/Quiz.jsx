@@ -164,19 +164,19 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
   };
 
   const handleFinishQuiz = () => {
-    // Handle quiz completion - question 5 routing
-    const question5Answer = selectedAnswers[4]; // question 5 (0-indexed)
+    // Handle quiz completion - question 1 routing
+    const question1Answer = selectedAnswers[0]; // question 1 (0-indexed)
     
     let resultRoute;
-    if (question5Answer === 'efficiency') {
-      resultRoute = 'scent1'; // Option 1 now routes to ScentQuote1 with Lavender background
-    } else if (question5Answer === 'protection') {
-      resultRoute = 'protection';
-    } else if (question5Answer === 'scent_lasting') {
-      // Random selection between two scent components
-      resultRoute = Math.random() < 0.5 ? 'scent1' : 'scent2';
-    } else if (question5Answer === 'gentle_clean') {
-      resultRoute = 'gentle';
+    if (question1Answer === 'romantic') {
+      // Random selection between lavender and sakura
+      resultRoute = Math.random() < 0.5 ? 'lavender' : 'scent1';
+    } else if (question1Answer === 'fresh') {
+      resultRoute = 'scent2'; // peach
+    } else if (question1Answer === 'simple') {
+      resultRoute = 'protection'; // honey
+    } else if (question1Answer === 'fun') {
+      resultRoute = 'gentle'; // apple
     }
     
     console.log('Quiz completed!', selectedAnswers);
