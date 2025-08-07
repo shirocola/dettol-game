@@ -1,11 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './App.css';
 import './pages/AgeSelection/AgeSelection.css'; 
 import AgeSelection from './pages/AgeSelection/AgeSelection';
-import DettolCircle from './components/DettolCircle/DettolCircle'; 
 import Button from './components/Button/Button'; 
 import DettolQuizComplete from './components/Quiz/Quiz';
-import QRCodeComponent from './components/QRCode/QRCodeComponent';
 import EfficiencyResult from './pages/Quiz/EfficiencyResult';
 import ProtectionResult from './pages/Quiz/ProtectionResult';
 import ScentResult1 from './pages/Quiz/ScentResult1';
@@ -24,9 +22,7 @@ import useImagePreloader from './hooks/useImagePreloader';
 
 function App() {
   const [gameStep, setGameStep] = useState(0); // 0: Start Screen, 1: Age Selection, 2: Start Page, 3: Quiz, 4-9: Results, 10-15: Quotes, 16: Process
-  const [quizResult, setQuizResult] = useState(null);
-  // const gameUrl = "https://dettol-game.vercel.app/";
-  
+
   // Preload next screen images for faster transitions
   useImagePreloader(gameStep);
 
@@ -55,32 +51,29 @@ function App() {
     }
   };
 
-  // Auto-enter fullscreen when game starts
-  useEffect(() => {
-    // Add fullscreen request on first user interaction
-    const handleFirstInteraction = () => {
-      enterFullscreen();
-      // Remove the event listener after first interaction
-      document.removeEventListener('touchstart', handleFirstInteraction);
-      document.removeEventListener('click', handleFirstInteraction);
-    };
-
-    document.addEventListener('touchstart', handleFirstInteraction, { passive: true });
-    document.addEventListener('click', handleFirstInteraction);
-
-    return () => {
-      document.removeEventListener('touchstart', handleFirstInteraction);
-      document.removeEventListener('click', handleFirstInteraction);
-    };
-  }, []);
-
   const smoothTransition = (nextStep, delay = 300) => {
     setTimeout(() => {
       setGameStep(nextStep);
     }, delay);
   };
 
-  const handleStartGame = () => {
+  const handleStartGame = async () => {
+    // Request fullscreen
+    await enterFullscreen();
+
+    // Play background music
+    try {
+      const audio = new Audio('/music/Dettol BGM.mp3');
+      audio.loop = true;
+      audio.volume = 0.5;
+      audio.preload = 'auto';
+      await audio.play();
+      window.dettolAudio = audio;
+    } catch (error) {
+      console.error('Audio error:', error);
+      console.log('Audio file path:', '/music/Dettol BGM.mp3');
+    }
+
     smoothTransition(1); // Navigate to Age Selection
   };
 
@@ -89,12 +82,9 @@ function App() {
   };
 
 
-  const handleQuizComplete = (resultRoute, answers) => {
-    setQuizResult({ route: resultRoute, answers });
-    // Show process page first
+  const handleQuizComplete = (resultRoute) => {
     setGameStep(16);
     
-    // After 3 seconds, navigate to result page
     setTimeout(() => {
       switch (resultRoute) {
         case 'efficiency':
@@ -123,7 +113,6 @@ function App() {
 
   const handlePlayAgain = () => {
     smoothTransition(0);
-    setQuizResult(null);
   };
 
   const handleShowQuote = (resultStep) => {
