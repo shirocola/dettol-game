@@ -571,6 +571,9 @@
   .question-container {
     padding: 6px;
     margin-bottom: 4px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .question-text {
@@ -671,6 +674,9 @@
   .question-container {
     padding: 10px;
     margin-bottom: 10px;
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .answers-container.image-answers {
