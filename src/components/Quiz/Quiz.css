@@ -596,8 +596,8 @@
   }
   
   .answer-icon img {
-    width: 100px;
-    height: 100px;
+    width: 140px !important;
+    height: 140px !important;
   }
   
   .answer-label {
@@ -687,6 +687,11 @@
   .answer-button.image-answer {
     min-height: 120px;
     margin-bottom: 10px;
+  }
+  
+  .answer-icon img {
+    width: 140px !important;
+    height: 140px !important;
   }
 }
 
