@@ -61,10 +61,16 @@ function App() {
     // Request fullscreen
     await enterFullscreen();
 
-    // Play background music
+    // Stop previous audio if it exists
+    if (window.dettolAudio) {
+      window.dettolAudio.pause();
+      window.dettolAudio.currentTime = 0;
+      window.dettolAudio = null;
+    }
+
+    // Play background music (no loop)
     try {
       const audio = new Audio('/music/Dettol BGM.mp3');
-      audio.loop = true;
       audio.volume = 0.5;
       audio.preload = 'auto';
       await audio.play();
