@@ -212,15 +212,15 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
         {/* Decorative star */}
         <div className="star star-top">✦</div>
         
-        {/* Question section */}
-        <div className="question-container">
-          <div className="question-text">
-            {currentQ.question}
-          </div>
-        </div>
-        
         {/* Answer options */}
         <div className={`answers-container ${currentQ.type === 'image' ? 'image-answers' : 'text-answers'}`}>
+          {/* Question section inside answers container */}
+          <div className="question-container">
+            <div className="question-text">
+              {currentQ.question}
+            </div>
+          </div>
+          
           {currentQ.answers.map((answer) => (
             <button 
               key={answer.id}
