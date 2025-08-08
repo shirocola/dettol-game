@@ -50,28 +50,28 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
         { 
           id: "fruit", 
           text: "กลิ่นผลไม้",
-          icon: <img src="/brush.png" alt="brush" style={{width: 160, height: 160}} />,
+          icon: <img src="/fruit.png" alt="brush" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "แปรงฟัน"
         },
         { 
           id: "flower", 
           text: "กลิ่นดอกไม้",
-          icon: <img src="/fresh.png" alt="fresh" style={{width: 160, height: 160}} />,
+          icon: <img src="/flower.png" alt="fresh" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "แช่น้ำ"
         },
         { 
           id: "aroma", 
           text: "กลิ่นอโรม่า",
-          icon: <img src="/foam.png" alt="foam" style={{width: 160, height: 160}} />,
+          icon: <img src="/aroma.png" alt="foam" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "ฟองสบู่"
         },
         { 
           id: "babypowder", 
           text: "กลิ่นแป้งเด็ก",
-          icon: <img src="/hairwash.png" alt="hairwash" style={{width: 160, height: 160}} />,
+          icon: <img src="/babypowder.png" alt="hairwash" style={{width: 160, height: 160}} />,
           bgColor: "#c8e6c8",
           description: "สระผม"
         }
@@ -185,6 +185,26 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
     }
   };
 
+  // Helper for double tap
+  let lastTap = 0;
+
+  const handleAnswerDoubleAction = (answerId) => {
+    handleAnswerSelection(answerId);
+    if (currentQuestion < questions.length - 1) {
+      setTimeout(() => handleNextQuestion(), 0);
+    } else {
+      setTimeout(() => handleFinishQuiz(), 0);
+    }
+  };
+
+  const handleTouchEnd = (answerId) => {
+    const now = Date.now();
+    if (now - lastTap < 300) {
+      handleAnswerDoubleAction(answerId);
+    }
+    lastTap = now;
+  };
+
   const currentQ = questions[currentQuestion];
 
   return (
@@ -222,7 +242,8 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
                 selectedAnswers[currentQuestion] === answer.id ? 'selected' : ''
               }`}
               onClick={() => handleAnswerSelection(answer.id)}
-              onTouchEnd={() => handleAnswerSelection(answer.id)}
+              onDoubleClick={() => handleAnswerDoubleAction(answer.id)}
+              onTouchEnd={() => handleTouchEnd(answer.id)}
               style={currentQ.type === 'image' ? { backgroundColor: answer.bgColor } : {}}
             >
               {currentQ.type === 'image' ? (
