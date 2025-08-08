@@ -209,20 +209,6 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
 
   return (
       <div className="quiz-card">
-        {/* Header with Dettol branding */}
-        <div className="quiz-header">
-          <div className="dettol-text">DETTOL</div>
-          <div className="dettol-logo">
-            <div className="logo-circle">
-              <div className="logo-text">Dettol</div>
-              <div className="logo-cross">
-                <div className="cross-vertical"></div>
-                <div className="cross-horizontal"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
         {/* Decorative star */}
         <div className="star star-top">✦</div>
         

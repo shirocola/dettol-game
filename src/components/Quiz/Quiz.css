@@ -2,7 +2,7 @@
 
 .quiz-card {
   position: relative;
-  background: transparent;
+  background: url('/grass-bg.png') center center / cover no-repeat;
   border-radius: 20px;
   padding: 15px;
   min-height: 100vh;
