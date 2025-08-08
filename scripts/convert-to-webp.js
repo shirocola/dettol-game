@@ -38,7 +38,7 @@ const PRIORITY_FILES = [
   'apple-quote.png',        // 1.0MB
   'honey-quote.png',        // 0.9MB
   'sakura-quote.png',       // 0.9MB
-  'lavender-qoute.png',     // Note: typo in filename
+  'lavender-quote.png',     // Note: typo in filename
   // Quiz icons
   'foam.png',               // 435KB
   'fun.png',                // 388KB
