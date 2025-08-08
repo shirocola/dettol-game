@@ -21,14 +21,8 @@ const ResultFooter = ({ onDownload, onNext, nextButtonText = "ถัดไป", 
     
     let imageUrl = match[1];
     
-    // Convert WebP URL back to PNG for download
-    // Remove responsive suffixes (-mobile, -tablet, -desktop) and convert .webp to .png
-    imageUrl = imageUrl
-      .replace(/-mobile\.webp$/i, '.png')
-      .replace(/-tablet\.webp$/i, '.png') 
-      .replace(/-desktop\.webp$/i, '.png')
-      .replace(/\.webp$/i, '.png');
-    
+    // Use the actual loaded image (WebP) instead of trying to convert to PNG
+    // This avoids CORS and file accessibility issues
     return imageUrl;
   };
 
@@ -48,10 +42,17 @@ const ResultFooter = ({ onDownload, onNext, nextButtonText = "ถัดไป", 
         return;
       }
 
+      // Detect if this is a result or quote page
+      const isQuotePage = document.querySelector('.quote-result-container');
+      const pageType = isQuotePage ? 'quote' : 'result';
+
+      // Get file extension from the actual image URL
+      const fileExtension = imageUrl.includes('.webp') ? '.webp' : '.png';
+
       // Create a temporary link to download the image
       const link = document.createElement('a');
       link.href = imageUrl;
-      link.download = `dettol-proskin-${theme || 'result'}-${Date.now()}.png`;
+      link.download = `${theme || 'result'}-${pageType}${fileExtension}`;
       
       // For cross-origin images, we need to fetch and create blob
       try {
