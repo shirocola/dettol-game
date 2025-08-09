@@ -9,7 +9,7 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
   const questions = [
     {
       id: 1,
-      question: "ความรักที่คุณอยากสัมผัสเป็นรูปแบบได ?",
+      question: "ความรักที่คุณอยากสัมผัสเป็นรูปแบบใด ?",
       type: "image",
       answers: [
         { 
