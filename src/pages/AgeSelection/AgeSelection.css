@@ -92,20 +92,38 @@
   left: 50%;
   width: 50vw;
   max-width: 400px;
-  height: 40px;
-  background: transparent;
-  border: none;
+  height: 80px; /* Increased from 60px */
+  background: rgba(255, 235, 59, 0.8) !important; /* Bright yellow background */
+  border: 3px solid #ff5722 !important; /* Orange border */
   cursor: pointer;
   z-index: 2;
   transform: translateX(-50%);
+  color: #000 !important;
+  font-weight: bold !important;
+  font-size: 20px !important; /* Increased font size */
 }
 
-/* Adjust these top values to match the button positions in your PNG */
-.btn1 { top: calc(32vh + 32px); }
-.btn2 { top: calc(40vh + 36px); }
-.btn3 { top: calc(48vh + 40px); }
-.btn4 { top: calc(56vh + 45px); }
-.btn5 { top: calc(64vh + 45px); }
+/* Final positions - btn1 perfect, btn2 adjusted higher, btn3-5 acceptable */
+.btn1 { 
+  top: calc(35vh + 10px); 
+  background: rgba(255, 87, 34, 0.9) !important; /* Orange for btn1 - PERFECT POSITION */
+}
+.btn2 { 
+  top: calc(42vh + 20px); 
+  background: rgba(76, 175, 80, 0.9) !important; /* Green for btn2 - moved higher */
+}
+.btn3 { 
+  top: calc(52vh + 30px); 
+  background: rgba(33, 150, 243, 0.9) !important; /* Blue for btn3 - acceptable */
+}
+.btn4 { 
+  top: calc(59vh + 40px); 
+  background: rgba(156, 39, 176, 0.9) !important; /* Purple for btn4 - acceptable */
+}
+.btn5 { 
+  top: calc(66vh + 50px); 
+  background: rgba(233, 30, 99, 0.9) !important; /* Pink for btn5 - acceptable */
+}
 
 /* Optional: add :hover for debug or accessibility */
 .age-btn:focus, .age-btn:hover {
@@ -199,16 +217,36 @@
   }
   
   .age-btn {
-    height: 60px;
+    height: 100px; /* Increased from 80px for much better visibility */
     max-width: 600px;
+    background: rgba(255, 235, 59, 0.9) !important; /* Bright yellow for kiosk */
+    border: 4px solid #ff5722 !important; /* Thicker orange border */
+    font-size: 28px !important; /* Increased font size */
+    font-weight: bold !important;
+    color: #000 !important;
   }
   
-  /* Scale button positions for kiosk */
-  .btn1 { top: calc(30vh + 40px); }
-  .btn2 { top: calc(38vh + 50px); }
-  .btn3 { top: calc(46vh + 60px); }
-  .btn4 { top: calc(54vh + 70px); }
-  .btn5 { top: calc(62vh + 80px); }
+  /* Final kiosk positions - btn1 perfect, btn2 adjusted higher, btn3-5 acceptable */
+  .btn1 { 
+    top: calc(35vh + 20px); 
+    background: rgba(255, 87, 34, 0.9) !important; /* Orange for btn1 - PERFECT POSITION */
+  }
+  .btn2 { 
+    top: calc(42vh + 30px); 
+    background: rgba(76, 175, 80, 0.9) !important; /* Green for btn2 - moved higher */
+  }
+  .btn3 { 
+    top: calc(52vh + 40px); 
+    background: rgba(33, 150, 243, 0.9) !important; /* Blue for btn3 - acceptable */
+  }
+  .btn4 { 
+    top: calc(59vh + 50px); 
+    background: rgba(156, 39, 176, 0.9) !important; /* Purple for btn4 - acceptable */
+  }
+  .btn5 { 
+    top: calc(66vh + 60px); 
+    background: rgba(233, 30, 99, 0.9) !important; /* Pink for btn5 - acceptable */
+  }
   
   .logo {
     width: 200px;
