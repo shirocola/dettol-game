@@ -253,18 +253,18 @@ const DettolQuizComplete = ({ onQuizComplete }) => {
               />
             </div>
           )}
+          {/* Finish button for last question */}
+          {currentQuestion === questions.length - 1 && (
+            <div className="finish-button-container">
+              <Button
+                text="เสร็จสิ้น"
+                onClick={handleFinishQuiz}
+                className="smooth-button"
+                disabled={!selectedAnswers[currentQuestion]}
+              />
+            </div>
+          )}
         </div>
-        {/* Finish button for last question */}
-        {currentQuestion === questions.length - 1 && (
-          <div className="finish-button-container">
-            <Button
-              text="เสร็จสิ้น"
-              onClick={handleFinishQuiz}
-              className="smooth-button"
-              disabled={!selectedAnswers[currentQuestion]}
-            />
-          </div>
-        )}
         
         {/* Decorative star */}
         <div className="star star-bottom">✦</div>
