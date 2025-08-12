@@ -184,8 +184,57 @@
   transform: scale(0.98); /* Slight press effect */
 }
 
-/* Kiosk large screen styles */
-@media (min-width: 1000px) {
+/* Kiosk screen styles - Portrait orientation (1080x1920 and similar) */
+@media (min-width: 1000px) and (orientation: portrait), (width: 1080px) and (height: 1920px) {
+  .age-selection-container {
+    max-width: 1080px;
+    max-height: 1920px;
+    margin: 0 auto;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+  
+  .age-selection-card {
+    padding: 80px 40px;
+  }
+  
+  .age-btn {
+    height: 60px;
+    max-width: 600px;
+  }
+  
+  /* Scale button positions for kiosk */
+  .btn1 { top: calc(30vh + 40px); }
+  .btn2 { top: calc(38vh + 50px); }
+  .btn3 { top: calc(46vh + 60px); }
+  .btn4 { top: calc(54vh + 70px); }
+  .btn5 { top: calc(62vh + 80px); }
+  
+  .logo {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 60px;
+  }
+  
+  .logo-text {
+    font-size: 42px;
+  }
+  
+  .button-group {
+    gap: 40px;
+  }
+  
+  .next-button {
+    width: 300px;
+    padding: 30px;
+    font-size: 32px;
+    min-height: 100px;
+    border-radius: 20px;
+  }
+}
+
+/* Kiosk large screen styles - Landscape fallback */
+@media (min-width: 1000px) and (orientation: landscape) {
   .age-selection-card {
     padding: 60px;
   }
