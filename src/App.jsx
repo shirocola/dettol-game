@@ -19,12 +19,28 @@ import GentleQuote from './pages/Quiz/GentleQuote';
 import Process from './pages/Process/Process';
 import ResponsiveImage from './components/ResponsiveImage/ResponsiveImage';
 import useImagePreloader from './hooks/useImagePreloader';
+import { useEffect } from 'react';
 
 function App() {
   const [gameStep, setGameStep] = useState(0); // 0: Start Screen, 1: Age Selection, 2: Start Page, 3: Quiz, 4-9: Results, 10-15: Quotes, 16: Process
 
   // Preload next screen images for faster transitions
   useImagePreloader(gameStep);
+
+  // Cleanup audio on component unmount
+  useEffect(() => {
+    return () => {
+      if (window.dettolAudio) {
+        window.dettolAudio.pause();
+        window.dettolAudio.currentTime = 0;
+        if (window.dettolAudioEndedHandler) {
+          window.dettolAudio.removeEventListener('ended', window.dettolAudioEndedHandler);
+        }
+        window.dettolAudio = null;
+      }
+      window.dettolGameStarting = false;
+    };
+  }, []);
 
   // Fullscreen functionality
   const enterFullscreen = async () => {
@@ -58,6 +74,10 @@ function App() {
   };
 
   const handleStartGame = async () => {
+    // Prevent multiple calls
+    if (window.dettolGameStarting) return;
+    window.dettolGameStarting = true;
+
     // Request fullscreen
     await enterFullscreen();
 
@@ -65,20 +85,36 @@ function App() {
     if (window.dettolAudio) {
       window.dettolAudio.pause();
       window.dettolAudio.currentTime = 0;
+      window.dettolAudio.removeEventListener('ended', window.dettolAudioEndedHandler);
       window.dettolAudio = null;
     }
 
-    // Play background music (no loop)
+    // Play background music (no loop, single play)
     try {
       const audio = new Audio('/music/Dettol BGM.mp3');
       audio.volume = 0.5;
+      audio.loop = false; // Explicitly prevent looping
       audio.preload = 'auto';
+      
+      // Add ended event listener to clean up
+      const endedHandler = () => {
+        window.dettolAudio = null;
+        audio.removeEventListener('ended', endedHandler);
+      };
+      audio.addEventListener('ended', endedHandler);
+      window.dettolAudioEndedHandler = endedHandler;
+      
       await audio.play();
       window.dettolAudio = audio;
     } catch (error) {
       console.error('Audio error:', error);
       console.log('Audio file path:', '/music/Dettol BGM.mp3');
     }
+
+    // Reset the flag after a delay
+    setTimeout(() => {
+      window.dettolGameStarting = false;
+    }, 1000);
 
     smoothTransition(1); // Navigate to Age Selection
   };
