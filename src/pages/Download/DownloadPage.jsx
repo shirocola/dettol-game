@@ -5,16 +5,13 @@ import Button from '../../components/Button/Button';
 import './DownloadPage.css';
 
 const DownloadPage = ({ resultType, onBack }) => {
-  const [resultQrData, setResultQrData] = useState('');
-  const [quoteQrData, setQuoteQrData] = useState('');
+  const [qrData, setQrData] = useState('');
   
   useEffect(() => {
-    // URLs to React image viewer with download button
-    const resultViewUrl = `${window.location.origin}/?type=${resultType}&file=result`;
-    const quoteViewUrl = `${window.location.origin}/?type=${resultType}&file=quote`;
+    // Single URL to React image viewer showing both images
+    const viewUrl = `${window.location.origin}/?type=${resultType}`;
     
-    setResultQrData(resultViewUrl);
-    setQuoteQrData(quoteViewUrl);
+    setQrData(viewUrl);
   }, [resultType]);
 
   const handleDownloadSeparate = async () => {
@@ -67,37 +64,18 @@ const DownloadPage = ({ resultType, onBack }) => {
         <div className="qr-section">
           <h2>สแกน QR Code เพื่อดาวน์โหลด</h2>
           
-          <div className="qr-codes-container">
-            <div className="qr-item">
-              <div className="qr-code-container">
-                {resultQrData && (
-                  <QRCodeSVG
-                    value={resultQrData}
-                    size={150}
-                    level="M"
-                    includeMargin={true}
-                  />
-                )}
-              </div>
-              <p>ผลลัพธ์</p>
-            </div>
-            
-            <div className="qr-item">
-              <div className="qr-code-container">
-                {quoteQrData && (
-                  <QRCodeSVG
-                    value={quoteQrData}
-                    size={150}
-                    level="M"
-                    includeMargin={true}
-                  />
-                )}
-              </div>
-              <p>คำคม</p>
-            </div>
+          <div className="qr-code-container">
+            {qrData && (
+              <QRCodeSVG
+                value={qrData}
+                size={200}
+                level="M"
+                includeMargin={true}
+              />
+            )}
           </div>
           
-          <p>สแกนเพื่อดูรูปและดาวน์โหลด</p>
+          <p>สแกนเพื่อดูทั้ง 2 รูปและเลือกดาวน์โหลด</p>
         </div>
         
         <div className="download-buttons-section">

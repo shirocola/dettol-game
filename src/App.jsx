@@ -30,7 +30,7 @@ function App() {
   // Check if we're on image viewer URL
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('type') && urlParams.get('file')) {
+    if (urlParams.get('type')) {
       setGameStep(999); // Special state for image viewer
     }
   }, []);
