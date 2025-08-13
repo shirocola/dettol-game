@@ -39,11 +39,32 @@
   font-weight: 600;
 }
 
+.qr-codes-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.qr-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
 .qr-code-container {
-  padding: 20px;
+  padding: 15px;
   background: white;
   border-radius: 15px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.qr-item p {
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  font-size: 1rem;
 }
 
 .qr-section p {
@@ -108,8 +129,12 @@
     font-size: 1.5rem;
   }
   
-  .qr-code-container canvas {
-    max-width: 150px;
+  .qr-codes-container {
+    gap: 15px;
+  }
+  
+  .qr-code-container svg {
+    max-width: 120px;
     height: auto;
   }
   

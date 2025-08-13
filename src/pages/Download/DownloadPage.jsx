@@ -5,13 +5,16 @@ import Button from '../../components/Button/Button';
 import './DownloadPage.css';
 
 const DownloadPage = ({ resultType, onBack }) => {
-  const [qrData, setQrData] = useState('');
+  const [resultQrData, setResultQrData] = useState('');
+  const [quoteQrData, setQuoteQrData] = useState('');
   
   useEffect(() => {
-    // Generate QR code data pointing to auto-download page
-    const downloadPageUrl = `${window.location.origin}/download.html?type=${resultType}`;
+    // Generate QR codes for both images directly
+    const resultImageUrl = `${window.location.origin}/${resultType}-result.png`;
+    const quoteImageUrl = `${window.location.origin}/${resultType}-quote.png`;
     
-    setQrData(downloadPageUrl);
+    setResultQrData(resultImageUrl);
+    setQuoteQrData(quoteImageUrl);
   }, [resultType]);
 
   const handleDownloadSeparate = async () => {
@@ -63,17 +66,38 @@ const DownloadPage = ({ resultType, onBack }) => {
       <div className="download-content">
         <div className="qr-section">
           <h2>สแกน QR Code เพื่อดาวน์โหลด</h2>
-          <div className="qr-code-container">
-            {qrData && (
-              <QRCodeSVG
-                value={qrData}
-                size={200}
-                level="M"
-                includeMargin={true}
-              />
-            )}
+          
+          <div className="qr-codes-container">
+            <div className="qr-item">
+              <div className="qr-code-container">
+                {resultQrData && (
+                  <QRCodeSVG
+                    value={resultQrData}
+                    size={150}
+                    level="M"
+                    includeMargin={true}
+                  />
+                )}
+              </div>
+              <p>ผลลัพธ์</p>
+            </div>
+            
+            <div className="qr-item">
+              <div className="qr-code-container">
+                {quoteQrData && (
+                  <QRCodeSVG
+                    value={quoteQrData}
+                    size={150}
+                    level="M"
+                    includeMargin={true}
+                  />
+                )}
+              </div>
+              <p>คำคม</p>
+            </div>
           </div>
-          <p>สแกนเพื่อดาวน์โหลดผลลัพธ์และคำคมโดยอัตโนมัติ</p>
+          
+          <p>สแกนเพื่อเปิดรูปภาพและบันทึก</p>
         </div>
         
         <div className="download-buttons-section">
