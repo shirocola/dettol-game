@@ -9,12 +9,12 @@ const DownloadPage = ({ resultType, onBack }) => {
   const [quoteQrData, setQuoteQrData] = useState('');
   
   useEffect(() => {
-    // Generate QR codes that trigger download popups
-    const resultDownloadUrl = `${window.location.origin}/d.html?type=${resultType}&file=result`;
-    const quoteDownloadUrl = `${window.location.origin}/d.html?type=${resultType}&file=quote`;
+    // URLs to image viewer page with download button
+    const resultViewUrl = `${window.location.origin}/view.html?type=${resultType}&file=result`;
+    const quoteViewUrl = `${window.location.origin}/view.html?type=${resultType}&file=quote`;
     
-    setResultQrData(resultDownloadUrl);
-    setQuoteQrData(quoteDownloadUrl);
+    setResultQrData(resultViewUrl);
+    setQuoteQrData(quoteViewUrl);
   }, [resultType]);
 
   const handleDownloadSeparate = async () => {
@@ -97,7 +97,7 @@ const DownloadPage = ({ resultType, onBack }) => {
             </div>
           </div>
           
-          <p>สแกนเพื่อดาวน์โหลดไฟล์โดยตรง</p>
+          <p>สแกนเพื่อดูรูปและดาวน์โหลด</p>
         </div>
         
         <div className="download-buttons-section">
