@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Download</title></head>
+<body>
+<script>
+const params = new URLSearchParams(window.location.search);
+const type = params.get('type');
+const file = params.get('file');
+
+if (type && file) {
+    const filename = type + '-' + file + '.png';
+    const link = document.createElement('a');
+    link.href = '/' + filename;
+    link.download = filename;
+    link.click();
+}
+</script>
+</body>
+</html>
