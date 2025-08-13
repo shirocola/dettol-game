@@ -17,12 +17,14 @@ import ScentQuote2 from './pages/Quiz/ScentQuote2';
 import LavenderQuote from './pages/Quiz/LavenderQuote';
 import GentleQuote from './pages/Quiz/GentleQuote';
 import Process from './pages/Process/Process';
+import DownloadPage from './pages/Download/DownloadPage';
 import ResponsiveImage from './components/ResponsiveImage/ResponsiveImage';
 import useImagePreloader from './hooks/useImagePreloader';
 import { useEffect } from 'react';
 
 function App() {
-  const [gameStep, setGameStep] = useState(0); // 0: Start Screen, 1: Age Selection, 2: Start Page, 3: Quiz, 4-9: Results, 10-15: Quotes, 16: Process
+  const [gameStep, setGameStep] = useState(0); // 0: Start Screen, 1: Age Selection, 2: Start Page, 3: Quiz, 4-9: Results, 10-15: Quotes, 16: Process, 17-22: Download Pages
+  const [currentResultType, setCurrentResultType] = useState('');
 
   // Preload next screen images for faster transitions
   useImagePreloader(gameStep);
@@ -183,6 +185,53 @@ function App() {
     }
   };
 
+  const handleGoToDownload = (resultStep) => {
+    // Set the result type based on the step
+    let resultType = '';
+    switch (resultStep) {
+      case 4: // EfficiencyResult
+      case 10: // EfficiencyQuote
+        resultType = 'lavender';
+        setCurrentResultType(resultType);
+        smoothTransition(17);
+        break;
+      case 5: // ProtectionResult
+      case 11: // ProtectionQuote
+        resultType = 'honey';
+        setCurrentResultType(resultType);
+        smoothTransition(18);
+        break;
+      case 6: // ScentResult1
+      case 12: // ScentQuote1
+        resultType = 'sakura';
+        setCurrentResultType(resultType);
+        smoothTransition(19);
+        break;
+      case 7: // ScentResult2
+      case 13: // ScentQuote2
+        resultType = 'peach';
+        setCurrentResultType(resultType);
+        smoothTransition(20);
+        break;
+      case 8: // LavenderResult
+      case 14: // LavenderQuote
+        resultType = 'lavender';
+        setCurrentResultType(resultType);
+        smoothTransition(21);
+        break;
+      case 9: // GentleResult
+      case 15: // GentleQuote
+        resultType = 'apple';
+        setCurrentResultType(resultType);
+        smoothTransition(22);
+        break;
+      default:
+        resultType = 'lavender';
+        setCurrentResultType(resultType);
+        smoothTransition(17);
+    }
+  };
+
   return (
     <ResponsiveImage 
       src="/BG-Cream.png" 
@@ -240,37 +289,67 @@ function App() {
       )}
       {gameStep === 10 && (
         <div className="game-screen">
-          <EfficiencyQuote onNext={handlePlayAgain} />
+          <EfficiencyQuote onNext={() => handleGoToDownload(10)} />
         </div>
       )}
       {gameStep === 11 && (
         <div className="game-screen">
-          <ProtectionQuote onNext={handlePlayAgain} />
+          <ProtectionQuote onNext={() => handleGoToDownload(11)} />
         </div>
       )}
       {gameStep === 12 && (
         <div className="game-screen">
-          <ScentQuote1 onNext={handlePlayAgain} />
+          <ScentQuote1 onNext={() => handleGoToDownload(12)} />
         </div>
       )}
       {gameStep === 13 && (
         <div className="game-screen">
-          <ScentQuote2 onNext={handlePlayAgain} />
+          <ScentQuote2 onNext={() => handleGoToDownload(13)} />
         </div>
       )}
       {gameStep === 14 && (
         <div className="game-screen">
-          <LavenderQuote onNext={handlePlayAgain} />
+          <LavenderQuote onNext={() => handleGoToDownload(14)} />
         </div>
       )}
       {gameStep === 15 && (
         <div className="game-screen">
-          <GentleQuote onNext={handlePlayAgain} />
+          <GentleQuote onNext={() => handleGoToDownload(15)} />
         </div>
       )}
       {gameStep === 16 && (
         <div className="game-screen">
           <Process />
+        </div>
+      )}
+      {gameStep === 17 && (
+        <div className="game-screen">
+          <DownloadPage resultType={currentResultType} onBack={handlePlayAgain} />
+        </div>
+      )}
+      {gameStep === 18 && (
+        <div className="game-screen">
+          <DownloadPage resultType={currentResultType} onBack={handlePlayAgain} />
+        </div>
+      )}
+      {gameStep === 19 && (
+        <div className="game-screen">
+          <DownloadPage resultType={currentResultType} onBack={handlePlayAgain} />
+        </div>
+      )}
+      {gameStep === 20 && (
+        <div className="game-screen">
+          <DownloadPage resultType={currentResultType} onBack={handlePlayAgain} />
+        </div>
+      )}
+      {gameStep === 21 && (
+        <div className="game-screen">
+          <DownloadPage resultType={currentResultType} onBack={handlePlayAgain} />
+        </div>
+      )}
+      {gameStep === 22 && (
+        <div className="game-screen">
+          <DownloadPage resultType={currentResultType} onBack={handlePlayAgain} />
         </div>
       )}
       

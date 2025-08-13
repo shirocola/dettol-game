@@ -9,7 +9,7 @@ const ScentQuote1 = ({ onNext }) => {
       src="/sakura-quote.png" 
       className="quote-result-container sakura"
     >
-      <ResultFooter onNext={onNext} nextButtonText="กลับสู่หน้าหลัก" theme="sakura" />
+      <ResultFooter onNext={onNext} nextButtonText="ถัดไป" theme="sakura" />
     </ResponsiveImage>
   );
 };

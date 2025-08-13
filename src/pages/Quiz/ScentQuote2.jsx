@@ -9,7 +9,7 @@ const ScentQuote2 = ({ onNext }) => {
       src="/peach-quote.png" 
       className="quote-result-container peach"
     >
-      <ResultFooter onNext={onNext} nextButtonText="กลับสู่หน้าหลัก" theme="peach" />
+      <ResultFooter onNext={onNext} nextButtonText="ถัดไป" theme="peach" />
     </ResponsiveImage>
   );
 };

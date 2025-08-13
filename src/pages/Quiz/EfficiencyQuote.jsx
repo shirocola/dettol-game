@@ -9,7 +9,7 @@ const EfficiencyQuote = ({ onNext }) => {
       src="/lavender-quote.png" 
       className="quote-result-container lavender"
     >
-      <ResultFooter onNext={onNext} nextButtonText="กลับสู่หน้าหลัก" theme="lavender" />
+      <ResultFooter onNext={onNext} nextButtonText="ถัดไป" theme="lavender" />
     </ResponsiveImage>
   );
 };

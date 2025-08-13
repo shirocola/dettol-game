@@ -9,7 +9,7 @@ const ProtectionQuote = ({ onNext }) => {
       src="/honey-quote.png" 
       className="quote-result-container honey"
     >
-      <ResultFooter onNext={onNext} nextButtonText="กลับสู่หน้าหลัก" theme="honey" />
+      <ResultFooter onNext={onNext} nextButtonText="ถัดไป" theme="honey" />
     </ResponsiveImage>
   );
 };
