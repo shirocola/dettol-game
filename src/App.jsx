@@ -18,6 +18,7 @@ import LavenderQuote from './pages/Quiz/LavenderQuote';
 import GentleQuote from './pages/Quiz/GentleQuote';
 import Process from './pages/Process/Process';
 import DownloadPage from './pages/Download/DownloadPage';
+import ImageViewer from './pages/ImageViewer/ImageViewer';
 import ResponsiveImage from './components/ResponsiveImage/ResponsiveImage';
 import useImagePreloader from './hooks/useImagePreloader';
 import { useEffect } from 'react';
@@ -25,6 +26,14 @@ import { useEffect } from 'react';
 function App() {
   const [gameStep, setGameStep] = useState(0); // 0: Start Screen, 1: Age Selection, 2: Start Page, 3: Quiz, 4-9: Results, 10-15: Quotes, 16: Process, 17-22: Download Pages
   const [currentResultType, setCurrentResultType] = useState('');
+  
+  // Check if we're on image viewer URL
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('type') && urlParams.get('file')) {
+      setGameStep(999); // Special state for image viewer
+    }
+  }, []);
 
   // Preload next screen images for faster transitions
   useImagePreloader(gameStep);
@@ -351,6 +360,9 @@ function App() {
         <div className="game-screen">
           <DownloadPage resultType={currentResultType} onBack={handlePlayAgain} />
         </div>
+      )}
+      {gameStep === 999 && (
+        <ImageViewer />
       )}
       
     </ResponsiveImage>

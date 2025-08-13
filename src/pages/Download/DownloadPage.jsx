@@ -9,9 +9,9 @@ const DownloadPage = ({ resultType, onBack }) => {
   const [quoteQrData, setQuoteQrData] = useState('');
   
   useEffect(() => {
-    // URLs to image viewer page with download button
-    const resultViewUrl = `${window.location.origin}/view.html?type=${resultType}&file=result`;
-    const quoteViewUrl = `${window.location.origin}/view.html?type=${resultType}&file=quote`;
+    // URLs to React image viewer with download button
+    const resultViewUrl = `${window.location.origin}/?type=${resultType}&file=result`;
+    const quoteViewUrl = `${window.location.origin}/?type=${resultType}&file=quote`;
     
     setResultQrData(resultViewUrl);
     setQuoteQrData(quoteViewUrl);
